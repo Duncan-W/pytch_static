@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Pytch</title>
+    <style> 
+.cbody
+{
+  margin: auto;
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  width: 250px;
+  text-align: center;
+}
+.cmain
+{
+  height: 140px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  background-color: black;
+}
+.ctop
+{
+  display: inline-block;
+  width: 25%;
+}
+
+.ccontentwrap
+{
+ 
+  display: inline-block;
+  margin-top: 12.5px;
+  width: 230px;
+  height: 125px;
+  background-color: rgba(76, 76, 76, 0.42);
+  text-align: center;
+}
+
+.ccontent
+{
+  width: 1280px;
+  height: 700px;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  transform: scale(.18);
+
+}
+
+.ccont
+{
+  border-top-right-radius: 25px;
+  height: 90%;
+  width: 90%;
+}
+
+.cbottom
+{
+  height: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background: linear-gradient(35deg, rgb(114, 114, 114), rgb(197, 197, 197), rgb(218, 218, 218));
+  border-bottom: 1px solid rgb(92, 91, 91);
+
+}
+
+.cleg
+{
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(0deg, rgb(114, 114, 114), rgb(255, 255, 255), rgb(197, 197, 197), rgb(114, 114, 114));
+  -webkit-clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.cfoot
+{
+  display: inline-block;
+  vertical-align: top;
+  width: 65px;
+  height: 10px;
+  background: linear-gradient(0deg, rgb(197, 197, 197), rgb(197, 197, 197), rgb(114, 114, 114));
+  -webkit-clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 55px;
+  border-bottom: 2px solid rgb(114, 114, 114);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.bridge_text_wrapper {
+    position: relative; 
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.bridge_text_wrapper > p {
+  position: relative;
+  width:30vw;
+  color:purple;
+}
+
+.bridge_text_wrapper::before {    
+      content: "";
+      background-image: url('https://pytch.scss.tcd.ie/wp-content/uploads/2023/06/IMG_20230511_182016_068-1-scaled.jpg');
+      background-size: cover;
+      position: absolute;
+      background-position: 55% 40%;
+      
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.5;
+      filter: brightness(80%) sepia(20%) hue-rotate(270deg);
+}
+
+.bridge_text_wrapper h1 {
+  position: relative;
+  line-height: 0.9;
+
+}
+
+.bridge_text_wrapper p {
+  position: relative;
+
+}
+
+.bridge_text_wrapper section{
+  filter: contrast(2);
+  filter: drop-shadow(.05em .05em orange);
+  width:30vw;
+  padding-left: 5px;
+}
+
+ 
+/* Style the welcome text */
+.welcome-text {
+
+  margin: 0 auto;
+
+  background-color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <iframe style="display:none;" class="ccont" src="https://en.m.wikipedia.org"></iframe>
+
+<!-- nav -->
+
+        <header class="bridge_text_wrapper">
+          <section>
+            <h1>Welcome to Pytch!</h1>
+            <p>Pytch is a bridge from Scratch to Python.</p>
+
+            <p>It helps people to learn Python by building on skills they have developed in Scratch.</p>
+
+          </section>
+          
+
+            
+
+
+          <img
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Scratchlogo.svg"
+          style="transform: rotate(270deg); width: 150px; position:relative;  " 
+          alt="Python snake"
+        />
+          <div class="cbody">
+            <div class="cmain">
+              <div class="ccontentwrap">
+                <div class="ccontent">
+                  <iframe class="ccont" src="https://en.m.wikipedia.org"></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="cbottom">
+            </div>
+            <div class="cleg">
+            </div>
+            <div class="cfootwrap">
+              <div class="cfoot">
+              </div>
+            </div>
+          </div>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+            style="width: 30wv; position:relative" 
+            alt="Python snake"
+          />
+        </header>
+
+
+  </body>
+</html>
