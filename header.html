@@ -4,6 +4,35 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>Pytch</title>
     <style> 
+
+.fade {
+      display: none;
+    }
+    .fade.active {
+      display: block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .cbody
 {
   margin: auto;
@@ -210,34 +239,74 @@ header{max-width: 100%;}
           />
         </header>
         <div class="demo-cards">
-          <div role="alert" class="fade TutorialMiniCard alert alert-success show">
+          <section role="alert" class="fade TutorialMiniCard alert alert-success show">
             <h2>Catch a star</h2>
             <p>
               <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/chase/tutorial-assets/screenshot.png" alt="screenshot of Catch a star">
               </p>
               <p>In this introduction to coding in Pytch, you control a bird using the keyboard, and your job is to catch the star.</p>
-            </div>
-            <div role="alert" class="fade TutorialMiniCard alert alert-success show">
-              <h2>Boing</h2>
-              <p>
-                <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/boing/tutorial-assets/summary-screenshot.png" alt="screenshot of Boing">
-                </p>
-                <p>In the game 
-                  <i>Pong</i> from 1972, players hit a ball back and forth. Our 
-                  <i>Boing</i> game, adapted from one in 
-                  <a href="https://wireframe.raspberrypi.org/books/code-the-classics1">Code the Classics</a>, lets you play against the computer.
-                </p>
-              </div>
-              <div role="alert" class="fade TutorialMiniCard alert alert-success show">
-                <h2>Q*bert</h2>
-                <p>
-                  <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/qbert/tutorial-assets/screenshot.png" alt="screenshot of Q*bert">
-                  </p>
-                  <p>Jump around a pyramid of blocks, trying to change the whole stack yellow without falling off! Our version is adapted from one in 
-                    <a href="https://wireframe.raspberrypi.org/issues/42">Wireframe magazine</a>, inspired by the 1982 arcade classic.
-                  </p>
-                </div>
-              </div>
+          </section>
+          <section role="alert" class="fade TutorialMiniCard alert alert-success show">
+            <h2>Boing</h2>
+            <p>
+              <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/boing/tutorial-assets/summary-screenshot.png" alt="screenshot of Boing">
+              </p>
+              <p>In the game 
+                <i>Pong</i> from 1972, players hit a ball back and forth. Our 
+                <i>Boing</i> game, adapted from one in 
+                <a href="https://wireframe.raspberrypi.org/books/code-the-classics1">Code the Classics</a>, lets you play against the computer.
+              </p>
+          </section>
+          <section role="alert" class="fade TutorialMiniCard alert alert-success show">
+            <h2>Q*bert</h2>
+            <p>
+              <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/qbert/tutorial-assets/screenshot.png" alt="screenshot of Q*bert">
+              </p>
+              <p>Jump around a pyramid of blocks, trying to change the whole stack yellow without falling off! Our version is adapted from one in 
+                <a href="https://wireframe.raspberrypi.org/issues/42">Wireframe magazine</a>, inspired by the 1982 arcade classic.
+              </p>
+          </section>
+          <section role="alert" class="fade TutorialMiniCard alert alert-success show">
+            <h2>Orange</h2>
+            <p> ajnb dsjgbnjk sdgsjd gjhgsd jhdsb jhsd hjbsdhjbsd jhgdsb jhsgbjhsgbd hjg</p>
+            <!-- Content of the fourth card -->
+          </section>
+
+        </div>
+        <button id="nextButton">Next</button>
+
+        <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slidesContainer = document.querySelector('.demo-cards');
+    const slides = Array.from(document.querySelectorAll('.fade'));
+    let currentIndex = 0;
+
+    function showSlides(index) {
+  slides.forEach((slide, i) => {
+    const normalizedIndex = i % slides.length;
+    const endRange = (index + 3) % slides.length;
+
+    if ((normalizedIndex >= index && normalizedIndex < endRange) || (endRange < index && (normalizedIndex >= index || normalizedIndex < endRange))) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+}
+
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % (slides.length - 2);
+      showSlides(currentIndex);
+    }
+
+    // Show the first three slides initially
+    showSlides(0);
+
+    // Set up event listener for cycling through slides
+    setInterval(nextSlide, 1000); // Change slide every 5 seconds, adjust as needed
+  });
+</script>
 
   </body>
 </html>
