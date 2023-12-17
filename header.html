@@ -5,12 +5,8 @@
     <title>Pytch</title>
     <style> 
 
-.fade {
-      display: none;
-    }
-    .fade.active {
-      display: block;
-    }
+
+
 
 
 
@@ -276,36 +272,68 @@ header{max-width: 100%;}
         <button id="nextButton">Next</button>
 
         <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const slidesContainer = document.querySelector('.demo-cards');
-    const slides = Array.from(document.querySelectorAll('.fade'));
-    let currentIndex = 0;
 
-    function showSlides(index) {
-  slides.forEach((slide, i) => {
-    const normalizedIndex = i % slides.length;
-    const endRange = (index + 3) % slides.length;
 
-    if ((normalizedIndex >= index && normalizedIndex < endRange) || (endRange < index && (normalizedIndex >= index || normalizedIndex < endRange))) {
-      slide.classList.add('active');
-    } else {
-      slide.classList.remove('active');
+// Create an array to store the objects
+let cards = [];
+const window_size = 3;
+const window_focus = 1;
+let window_position = 0;
+
+// Find all elements with the class "TutorialMiniCard"
+let tutorialMiniCards = document.querySelectorAll('.TutorialMiniCard');
+
+// Iterate through each element and build the object with node and children
+tutorialMiniCards.forEach((element) => {
+  let nodeObject = {
+    node: element,
+    children: Array.from(element.children)
+  };
+
+  // Push the object to the array
+  cards.push(nodeObject);
+});
+
+
+
+// Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
+console.log(cards);
+
+
+
+// Event listener for keydown event
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    // Handle right or left arrow key press
+    handleArrowKeyPress(event.key);
+  }
+});
+
+// Function to handle arrow key press
+function handleArrowKeyPress(key) {
+  // Add your logic here for handling arrow key presses
+  // For example, you can navigate through the cards and perform actions based on the key pressed
+  console.log(`Arrow key pressed: ${key}`);
+
+  
+ 
+
+  for (let i = window_position, steps = window_size; steps > 0; i++, steps--) {
+    if (i >= cards.length) {
+      i = 0;
     }
-  });
+    console.log(cards[i]);
+
+  }
+  
+  window_position++;
+
 }
 
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % (slides.length - 2);
-      showSlides(currentIndex);
-    }
 
-    // Show the first three slides initially
-    showSlides(0);
 
-    // Set up event listener for cycling through slides
-    setInterval(nextSlide, 1000); // Change slide every 5 seconds, adjust as needed
-  });
+
 </script>
 
   </body>
