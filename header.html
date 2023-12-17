@@ -9,10 +9,27 @@
 
 
 
+#TutorialCarousel {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto; /* Enable horizontal scrolling if the content overflows */
+}
 
+.TutorialMiniCard {
+  /* Existing styling for each card */
+  border: 1px solid #ccc;
+  margin: 5px;
+  padding: 10px;
+  transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* Add a smooth transition effect */
 
+  /* New styling for hover effect */
+  cursor: pointer;
+}
 
-
+.TutorialMiniCard:hover {
+  transform: scale(1.1); /* Increase the size when hovered */
+  flex-grow: 2; /* Adjust flex-grow when hovered */
+}
 
 
 
@@ -234,16 +251,16 @@ header{max-width: 100%;}
             alt="Python snake"
           />
         </header>
-        <div class="demo-cards">
+        <div style="display:none" class="demo-cards">
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>Catch a star</h2>
+            <h2>0. Catch a star</h2>
             <p>
               <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/chase/tutorial-assets/screenshot.png" alt="screenshot of Catch a star">
               </p>
               <p>In this introduction to coding in Pytch, you control a bird using the keyboard, and your job is to catch the star.</p>
           </section>
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>Boing</h2>
+            <h2>1. Boing</h2>
             <p>
               <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/boing/tutorial-assets/summary-screenshot.png" alt="screenshot of Boing">
               </p>
@@ -254,7 +271,7 @@ header{max-width: 100%;}
               </p>
           </section>
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>Q*bert</h2>
+            <h2>2. Q*bert</h2>
             <p>
               <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/qbert/tutorial-assets/screenshot.png" alt="screenshot of Q*bert">
               </p>
@@ -263,13 +280,13 @@ header{max-width: 100%;}
               </p>
           </section>
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>Orange</h2>
+            <h2>3. Orange</h2>
             <p> ajnb dsjgbnjk sdgsjd gjhgsd jhdsb jhsd hjbsdhjbsd jhgdsb jhsgbjhsgbd hjg</p>
             <!-- Content of the fourth card -->
           </section>
 
         </div>
-        <button id="nextButton">Next</button>
+        <div id="TutorialCarousel">Next</div>
 
         <script>
 
@@ -309,26 +326,44 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-// Function to handle arrow key press
 function handleArrowKeyPress(key) {
-  // Add your logic here for handling arrow key presses
-  // For example, you can navigate through the cards and perform actions based on the key pressed
   console.log(`Arrow key pressed: ${key}`);
+  const tutorialCarousel = document.getElementById('TutorialCarousel');
 
-  
- 
+  if (tutorialCarousel) {
+    // Clear existing children
+    tutorialCarousel.innerHTML = '';
 
-  for (let i = window_position, steps = window_size; steps > 0; i++, steps--) {
-    if (i >= cards.length) {
-      i = 0;
+    // Create a document fragment
+    const fragment = document.createDocumentFragment();
+
+    for (let i = window_position, steps = window_size; steps > 0; steps--) {
+      // Append the child element to the fragment
+      fragment.appendChild(cards[i].node);
+      console.log(cards[i]);
+
+      // Adjust the index based on the arrow key
+      if (key === 'ArrowRight') {
+        i = (i + 1) % cards.length; // Increment for right arrow
+      } else if (key === 'ArrowLeft') {
+        i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
+      }
     }
-    console.log(cards[i]);
 
+    // Append the fragment to "TutorialCarousel" in a single operation
+    tutorialCarousel.appendChild(fragment);
+  } else {
+    console.error('TutorialCarousel not found.');
   }
-  
-  window_position++;
 
+  // Update the window_position based on the arrow key
+  if (key === 'ArrowRight') {
+    window_position = (window_position + 1) % cards.length; // Increment for right arrow
+  } else if (key === 'ArrowLeft') {
+    window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
+  }
 }
+
 
 
 
