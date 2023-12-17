@@ -5,9 +5,16 @@
     <title>Pytch</title>
     <style> 
 
+.TutorialMiniCard img{
+  width: 200px;
+  margin: auto; /* Center the image horizontally within the item */
+  display: block; /* Remove extra spacing below image */
+}
 
-
-
+.outer-container {
+      display: flex;
+      align-items: center;
+    }
 
 #TutorialCarousel {
   display: flex;
@@ -17,9 +24,10 @@
 
 .TutorialMiniCard {
   /* Existing styling for each card */
+  flex: 1; /* This makes all items equal in size */
   border: 1px solid #ccc;
-  margin: 5px;
-  padding: 10px;
+  padding: 20px;
+  box-sizing: border-box;
   transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* Add a smooth transition effect */
 
   /* New styling for hover effect */
@@ -27,10 +35,19 @@
 }
 
 .TutorialMiniCard:hover {
-  transform: scale(1.1); /* Increase the size when hovered */
-  flex-grow: 2; /* Adjust flex-grow when hovered */
+  flex: 2; /* This makes the item twice as large as the others */
 }
 
+.TutorialMiniCard:hover img{
+    transform: scale(1.2);
+}
+
+
+.left-arrow, .right-arrow {
+      font-size: 44px;
+      margin: 5px;
+      cursor: pointer;
+    }
 
 
 
@@ -232,7 +249,12 @@ header{max-width: 100%;}
             <div class="cmain">
               <div class="ccontentwrap">
                 <div class="ccontent">
-                  <iframe class="ccont" src="https://en.m.wikipedia.org"></iframe>
+                  <video class="ccont" controls>
+                  
+                    <source src="Overview.mp4" type="video/mp4" />
+
+                  </video>
+
                 </div>
               </div>
             </div>
@@ -253,16 +275,16 @@ header{max-width: 100%;}
         </header>
         <div style="display:none" class="demo-cards">
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>0. Catch a star</h2>
+            <h2>Catch a star</h2>
             <p>
-              <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/chase/tutorial-assets/screenshot.png" alt="screenshot of Catch a star">
+              <img class="screenshot enabled" src="0.png" alt="screenshot of Catch a star">
               </p>
               <p>In this introduction to coding in Pytch, you control a bird using the keyboard, and your job is to catch the star.</p>
           </section>
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>1. Boing</h2>
+            <h2>Boing</h2>
             <p>
-              <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/boing/tutorial-assets/summary-screenshot.png" alt="screenshot of Boing">
+              <img class="screenshot enabled" src="1.png" alt="screenshot of Boing">
               </p>
               <p>In the game 
                 <i>Pong</i> from 1972, players hit a ball back and forth. Our 
@@ -271,23 +293,29 @@ header{max-width: 100%;}
               </p>
           </section>
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>2. Q*bert</h2>
+            <h2>Q*bert</h2>
             <p>
-              <img class="screenshot enabled" src="/tutorials/98787648ce41b61285db/qbert/tutorial-assets/screenshot.png" alt="screenshot of Q*bert">
+              <img class="screenshot enabled" src="2.png" alt="screenshot of Q*bert">
               </p>
               <p>Jump around a pyramid of blocks, trying to change the whole stack yellow without falling off! Our version is adapted from one in 
                 <a href="https://wireframe.raspberrypi.org/issues/42">Wireframe magazine</a>, inspired by the 1982 arcade classic.
               </p>
           </section>
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-            <h2>3. Orange</h2>
-            <p> ajnb dsjgbnjk sdgsjd gjhgsd jhdsb jhsd hjbsdhjbsd jhgdsb jhsgbjhsgbd hjg</p>
-            <!-- Content of the fourth card -->
+            <h2>Splat the moles</h2>
+            <p>
+              <img class="screenshot enabled" src="3.png" alt="screenshot of Splat-The-Moles">
+              </p>
+              <p>A game where the player has to splat moles to score points. But if they miss, they lose all their points!
+              </p>
           </section>
 
         </div>
-        <div id="TutorialCarousel">Next</div>
-
+        <div class="outer-container">
+          <div class="left-arrow">&#x276C;</div>
+          <div id="TutorialCarousel">Next</div>
+          <div class="right-arrow">&#x276D;</div>
+        </div>
         <script>
 
 
@@ -325,6 +353,23 @@ document.addEventListener('keydown', (event) => {
     handleArrowKeyPress(event.key);
   }
 });
+
+
+const rightArrowElement = document.querySelector('.right-arrow');
+if (rightArrowElement) {
+  rightArrowElement.addEventListener('click', () => {
+    // Handle click on right arrow element
+    handleArrowKeyPress('ArrowRight');
+  });
+}
+const leftArrowElement = document.querySelector('.left-arrow');
+if (leftArrowElement) {
+  leftArrowElement.addEventListener('click', () => {
+    // Handle click on right arrow element
+    handleArrowKeyPress('ArrowRight');
+  });
+}
+
 
 function handleArrowKeyPress(key) {
   console.log(`Arrow key pressed: ${key}`);
