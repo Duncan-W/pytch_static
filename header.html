@@ -31,6 +31,7 @@
   padding: 20px;
   box-sizing: border-box;
   transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* Add a smooth transition effect */
+  text-align: justify;
 
   /* New styling for hover effect */
   cursor: pointer;
@@ -43,6 +44,12 @@
 .TutorialMiniCard:hover img{
     transform: scale(1.2);
     margin-bottom: 2px;
+}
+
+hr {
+  margin-top: -2px;
+  color:rgb(190, 0, 190);
+
 }
 
 
@@ -152,8 +159,26 @@
 }
 
 
+.text-wrap{
+    vertical-align: middle;
+    display:inline-block;
+    width:75%;
+}
+.text-wrap p {
+    vertical-align: middle;
+    display: inline-block;
+}
+.first {
+    height: 100%;
+    line-height: 0;
+    margin-top: -4%;
+}
+.ipad {
+    vertical-align: middle;
+    display: inline-block;
+    width: 24%;
 
-
+}
 
 
 
@@ -276,6 +301,16 @@ header{max-width: 100%;}
             alt="Python snake"
           />
         </header>
+
+        <div class="first">
+          <img class="ipad" src="box.png" />
+          <div class="text-wrap">
+              <p></p>
+              <hr />
+              <p></p>
+          </div> 
+      </div>
+
         <div style="display:none" class="demo-cards">
           <section role="alert" class="fade TutorialMiniCard alert alert-success show">
             <h2>Catch a star</h2>
