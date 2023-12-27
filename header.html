@@ -5,7 +5,150 @@
     <title>Pytch</title>
     
     <script src="fslightbox.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hanken+Grotesk&display=swap">
     <style> 
+    body {
+  font-family: 'Hanken Grotesk', sans-serif;
+}
+
+
+
+         aside {
+         grid-area: sidebar;
+         font-size: 24px;
+         }
+         main {
+         grid-area: contennt;
+         }
+         header {
+         grid-area: header;
+         }
+         footer {
+         grid-area: footer;
+         }
+         nav{
+         grid-area:  nav;
+         }
+         #controls{
+         grid-area: controls;
+         margin:  auto;
+         }
+         #point{
+         grid-area: slider;
+         }
+         #swatches{
+         grid-area: swatches;
+         }
+         #below_map{
+         grid-area: belowbar;
+         margin:  auto;
+         }
+         .grid {
+         background-color: #fff;
+         color: #444;
+         }
+         .grid {
+         display: grid;
+         grid-gap: 1em;
+         grid-template-areas:
+         "header header header"
+         "nav nav nav"
+         "contennt contennt contennt"
+         "swatches swatches swatches"
+         "controls controls controls"
+         "slider slider slider"
+         "sidebar sidebar sidebar"
+         "belowbar belowbar belowbar"
+         "footer footer footer";
+         transition: 1s;
+         }
+         .grid_medium{
+         display: grid;
+         grid-gap: 20px;
+         grid-template-columns: 20px auto 30vw;
+         grid-template-areas:
+         "header  header  header header"
+         "nav nav nav nav"
+         "contennt contennt sidebar sidebar" 
+         "swatches swatches swatches swatches"
+         "controls controls controls controls"
+         "slider slider slider slider"
+         "footer  footer  footer footer";
+         transition: 2s;
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
          aside {
@@ -480,7 +623,6 @@ header{max-width: 100%;}
           <div id="TutorialCarousel">Next</div>
           <div class="right-arrow">&#x276D;</div>
         </div>
-        <button >Open Modal</button>
         <script>
 
 
