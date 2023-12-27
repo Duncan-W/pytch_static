@@ -3,7 +3,147 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>Pytch</title>
+    
+    <script src="fslightbox.js"></script>
     <style> 
+
+
+         aside {
+         grid-area: sidebar;
+         font-size: 24px;
+         }
+         main {
+         grid-area: contennt;
+         }
+         header {
+         grid-area: header;
+         }
+         footer {
+         grid-area: footer;
+         }
+         nav{
+         grid-area:  nav;
+         }
+         #controls{
+         grid-area: controls;
+         margin:  auto;
+         }
+         #point{
+         grid-area: slider;
+         }
+         #swatches{
+         grid-area: swatches;
+         }
+         #below_map{
+         grid-area: belowbar;
+         margin:  auto;
+         }
+         .grid {
+         background-color: #fff;
+         color: #444;
+         }
+         .grid {
+         display: grid;
+         grid-gap: 1em;
+         grid-template-areas:
+         "header header header"
+         "nav nav nav"
+         "contennt contennt contennt"
+         "swatches swatches swatches"
+         "controls controls controls"
+         "slider slider slider"
+         "sidebar sidebar sidebar"
+         "belowbar belowbar belowbar"
+         "footer footer footer";
+         transition: 1s;
+         }
+         .grid_medium{
+         display: grid;
+         grid-gap: 20px;
+         grid-template-columns: 20px auto 30vw;
+         grid-template-areas:
+         "header  header  header header"
+         "nav nav nav nav"
+         "contennt contennt sidebar sidebar" 
+         "swatches swatches swatches swatches"
+         "controls controls controls controls"
+         "slider slider slider slider"
+         "footer  footer  footer footer";
+         transition: 2s;
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .TutorialMiniCard img{
   width: 200px;
@@ -188,51 +328,42 @@ header{max-width: 100%;}
 
 
 .bridge_text_wrapper {
-    position: relative; 
+
     height: 60vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    background-image: url('IMG_20230511_182016_068-1-scaled_.webp');
+    background-position: 55% 40%;
+    background-size: cover;
 }
 
 .bridge_text_wrapper > p {
-  position: relative;
+
+
+      
+      background-image: url('IMG_20230511_182016_068-1-scaled_.webp');
+  
   width:30vw;
   color:purple;
 }
 
-.bridge_text_wrapper::before {    
-      content: "";
-      background-image: url('https://pytch.scss.tcd.ie/wp-content/uploads/2023/06/IMG_20230511_182016_068-1-scaled.jpg');
-      background-size: cover;
-      position: absolute;
-      background-position: 55% 40%;
-      
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      opacity: 0.5;
-      filter: brightness(80%) sepia(20%) hue-rotate(270deg);
-}
+
 
 .bridge_text_wrapper h1 {
-  position: relative;
+
   line-height: 0.9;
 
 }
 
-.bridge_text_wrapper p {
-  position: relative;
-
-}
 
 .bridge_text_wrapper section{
   filter: contrast(2);
-  filter: drop-shadow(.05em .05em orange);
+  filter: drop-shadow(.05em .05em rgb(254, 254, 254));
   width:30vw;
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
   padding-left: 5px;
 }
 
@@ -251,8 +382,7 @@ header{max-width: 100%;}
     </style>
   </head>
   <body>
-    <iframe style="display:none;" class="ccont" src="https://en.m.wikipedia.org"></iframe>
-
+   
 <!-- nav -->
 
         <header class="bridge_text_wrapper">
@@ -268,20 +398,20 @@ header{max-width: 100%;}
             
 
 
-          <img
-          src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Scratchlogo.svg"
-          style="transform: rotate(270deg); width: 150px; position:relative;  " 
-          alt="Python snake"
-        />
+
           <div class="cbody">
             <div class="cmain">
               <div class="ccontentwrap">
                 <div class="ccontent">
-                  <video class="ccont" controls>
+                  <button id="myBtn">
+                    <video class="ccont" controls data-toggle="lightbox">
                   
-                    <source src="Overview.mp4" type="video/mp4" />
+                      <source src="Overview.mp4" type="video/mp4" />
+  
+                    </video>
+                  </button>
+                 
 
-                  </video>
 
                 </div>
               </div>
@@ -295,15 +425,11 @@ header{max-width: 100%;}
               </div>
             </div>
           </div>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
-            style="width: 30wv; position:relative" 
-            alt="Python snake"
-          />
+
         </header>
 
         <div class="first">
-          <img class="ipad" src="box.png" />
+          <img class="ipad" src="box1.png" />
           <div class="text-wrap">
               <p></p>
               <hr />
@@ -354,6 +480,7 @@ header{max-width: 100%;}
           <div id="TutorialCarousel">Next</div>
           <div class="right-arrow">&#x276D;</div>
         </div>
+        <button >Open Modal</button>
         <script>
 
 
@@ -452,7 +579,48 @@ function handleArrowKeyPress(key) {
 
 
 
+
+
 </script>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>
 
   </body>
 </html>
