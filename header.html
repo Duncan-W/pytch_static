@@ -13,69 +13,76 @@
 
 
 
-         aside {
-         grid-area: sidebar;
-         font-size: 24px;
+.grid {
+            display: grid;
+            grid-gap: 1em;
+            grid-template-areas:
+            "nav nav nav"
+            "header header header"
+            "slider slider slider"
+            "contennt contennt contennt"
+            "footer footer footer";
+            transition: 1s;
+        }
+
+
+
+
+
+
+        aside {
+            grid-area: sidebar;
+            font-size: 24px;
+        }
+
+        main {
+            grid-area: contennt;
+
+        }
+
+
+        header {
+            grid-area: header;
+            align-items: center;
+            background-position: 55% 40%;
+            background-size: cover;
+            height: 60vh;
+            grid-template-areas:
+                "subgrid-text subgrid-video subgrid-video"
+        }
+
+        @media only screen and (max-width: 768px) {
+          header {
+            grid-area: header;
+            background-image: url('IMG_20230511_182016_068-1-scaled_.webp');
+            grid-template-areas:
+                "subgrid-video subgrid-video subgrid-video"
+                "subgrid-text subgrid-text subgrid-text"
          }
-         main {
-         grid-area: contennt;
-         }
-         header {
-         grid-area: header;
-         }
-         footer {
-         grid-area: footer;
-         }
-         nav{
-         grid-area:  nav;
-         }
-         #controls{
-         grid-area: controls;
-         margin:  auto;
-         }
-         #point{
-         grid-area: slider;
-         }
-         #swatches{
-         grid-area: swatches;
-         }
-         #below_map{
-         grid-area: belowbar;
-         margin:  auto;
-         }
-         .grid {
-         background-color: #fff;
-         color: #444;
-         }
-         .grid {
-         display: grid;
-         grid-gap: 1em;
-         grid-template-areas:
-         "header header header"
-         "nav nav nav"
-         "contennt contennt contennt"
-         "swatches swatches swatches"
-         "controls controls controls"
-         "slider slider slider"
-         "sidebar sidebar sidebar"
-         "belowbar belowbar belowbar"
-         "footer footer footer";
-         transition: 1s;
-         }
-         .grid_medium{
-         display: grid;
-         grid-gap: 20px;
-         grid-template-columns: 20px auto 30vw;
-         grid-template-areas:
-         "header  header  header header"
-         "nav nav nav nav"
-         "contennt contennt sidebar sidebar" 
-         "swatches swatches swatches swatches"
-         "controls controls controls controls"
-         "slider slider slider slider"
-         "footer  footer  footer footer";
-         transition: 2s;
-         }
+        }
+
+        /* mobile version needed here */
+
+        .subgrid-text {
+            grid-area: subgrid-header;
+        }
+
+        .subgrid-video {
+            grid-area: subgrid-main;
+        }
+
+
+        footer {
+            grid-area: footer;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        #point {
+            grid-area: slider;
+        }
 
 
 
@@ -146,74 +153,6 @@
 
 
 
-
-
-
-
-
-         aside {
-         grid-area: sidebar;
-         font-size: 24px;
-         }
-         main {
-         grid-area: contennt;
-         }
-         header {
-         grid-area: header;
-         }
-         footer {
-         grid-area: footer;
-         }
-         nav{
-         grid-area:  nav;
-         }
-         #controls{
-         grid-area: controls;
-         margin:  auto;
-         }
-         #point{
-         grid-area: slider;
-         }
-         #swatches{
-         grid-area: swatches;
-         }
-         #below_map{
-         grid-area: belowbar;
-         margin:  auto;
-         }
-         .grid {
-         background-color: #fff;
-         color: #444;
-         }
-         .grid {
-         display: grid;
-         grid-gap: 1em;
-         grid-template-areas:
-         "header header header"
-         "nav nav nav"
-         "contennt contennt contennt"
-         "swatches swatches swatches"
-         "controls controls controls"
-         "slider slider slider"
-         "sidebar sidebar sidebar"
-         "belowbar belowbar belowbar"
-         "footer footer footer";
-         transition: 1s;
-         }
-         .grid_medium{
-         display: grid;
-         grid-gap: 20px;
-         grid-template-columns: 20px auto 30vw;
-         grid-template-areas:
-         "header  header  header header"
-         "nav nav nav nav"
-         "contennt contennt sidebar sidebar" 
-         "swatches swatches swatches swatches"
-         "controls controls controls controls"
-         "slider slider slider slider"
-         "footer  footer  footer footer";
-         transition: 2s;
-         }
 
 
 
@@ -470,29 +409,6 @@ header{max-width: 100%;}
 
 
 
-.bridge_text_wrapper {
-
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background-image: url('IMG_20230511_182016_068-1-scaled_.webp');
-    background-position: 55% 40%;
-    background-size: cover;
-}
-
-.bridge_text_wrapper > p {
-
-
-      
-      background-image: url('IMG_20230511_182016_068-1-scaled_.webp');
-  
-  width:30vw;
-  color:purple;
-}
-
 
 
 .bridge_text_wrapper h1 {
@@ -525,24 +441,26 @@ header{max-width: 100%;}
     </style>
   </head>
   <body>
+    <div class="grid">
    
 <!-- nav -->
 
-        <header class="bridge_text_wrapper">
-          <section>
+        <header>
+          <section class="subgrid-text">
             <h1>Welcome to Pytch!</h1>
             <p>Pytch is a bridge from Scratch to Python.</p>
 
             <p>It helps people to learn Python by building on skills they have developed in Scratch.</p>
 
           </section>
+          <section class="subgrid-video">
           
 
             
 
 
 
-          <div class="cbody">
+          <div class="cbody ">
             <div class="cmain">
               <div class="ccontentwrap">
                 <div class="ccontent">
@@ -568,9 +486,10 @@ header{max-width: 100%;}
               </div>
             </div>
           </div>
+        </section>
 
         </header>
-
+</div>
         <div class="first">
           <img class="ipad" src="box1.png" />
           <div class="text-wrap">
