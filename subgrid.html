@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid with Subgrid</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas:
+        'header'
+        'main'
+        'footer';
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+    }
+
+    header {
+      grid-area: header;
+      display: grid;
+      text-align: center;
+      grid-template-columns: 1fr 2fr; /* One third and Two thirds */
+      align-items: center;
+            background-position: 55% 40%;
+             background-image: url('IMG_20230511_182016_068-1-scaled_.webp');
+            background-size: cover;
+            height: 60vh;
+    }
+
+    @media only screen and (max-width: 768px) {
+        header {
+            grid-area: header;
+            display: grid;
+            text-align: center;
+            grid-template-columns: 1fr; /* One third and Two thirds */
+            align-items: center;
+                    background-position: 55% 40%;
+                    background-image: url('IMG_20230511_182016_068-1-scaled_.webp');
+                    background-size: cover;
+                    height: 80vh;
+            }
+        }
+
+
+    main {
+      grid-area: main;
+      padding: 20px;
+    }
+
+    footer {
+      grid-area: footer;
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+
+
+    .cbody
+{
+  margin: auto;
+  position: relative;
+  display: inline-block;
+  height: 150px;
+  width: 250px;
+  text-align: center;
+}
+.cmain
+{
+  height: 140px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  background-color: black;
+}
+.ctop
+{
+  display: inline-block;
+  width: 25%;
+}
+
+.ccontentwrap
+{
+ 
+  display: inline-block;
+  margin-top: 12.5px;
+  width: 230px;
+  height: 125px;
+  background-color: rgba(76, 76, 76, 0.42);
+  text-align: center;
+}
+
+.ccontent
+{
+  width: 1280px;
+  height: 700px;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  transform: scale(.18);
+
+}
+
+.ccont
+{
+  border-top-right-radius: 25px;
+  height: 90%;
+  width: 90%;
+}
+
+.cbottom
+{
+  height: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background: linear-gradient(35deg, rgb(114, 114, 114), rgb(197, 197, 197), rgb(218, 218, 218));
+  border-bottom: 1px solid rgb(92, 91, 91);
+
+}
+
+.cleg
+{
+  display: inline-block;
+  vertical-align: top;
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(0deg, rgb(114, 114, 114), rgb(255, 255, 255), rgb(197, 197, 197), rgb(114, 114, 114));
+  -webkit-clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.cfoot
+{
+  display: inline-block;
+  vertical-align: top;
+  width: 65px;
+  height: 10px;
+  background: linear-gradient(0deg, rgb(197, 197, 197), rgb(197, 197, 197), rgb(114, 114, 114));
+  -webkit-clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
+  border-bottom-right-radius: 45px;
+  border-bottom-left-radius: 55px;
+  border-bottom: 2px solid rgb(114, 114, 114);
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+        <section class="subgrid-text">
+          <h1>Welcome to Pytch!</h1>
+          <p>Pytch is a bridge from Scratch to Python.</p>
+
+          <p>It helps people to learn Python by building on skills they have developed in Scratch.</p>
+
+        </section>
+        <section class="subgrid-video">
+        
+
+          <p> Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch.</p>
+
+
+
+        <div class="cbody">
+          <div class="cmain">
+            <div class="ccontentwrap">
+              <div class="ccontent">
+                <button id="myBtn">
+                  <video class="ccont" controls data-toggle="lightbox">
+                
+                    <source src="Overview.mp4" type="video/mp4" />
+
+                  </video>
+                </button>
+               
+
+
+              </div>
+            </div>
+          </div>
+          <div class="cbottom">
+          </div>
+          <div class="cleg">
+          </div>
+          <div class="cfootwrap">
+            <div class="cfoot">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </header>
+    <main>
+      <!-- Your main content goes here -->
+      <p>Main Content Goes Here</p>
+    </main>
+    <footer>
+      Footer
+    </footer>
+  </div>
+
+</body>
+<script>
+
+/*
+window.onload = function(){ 
+
+ let elem = document.querySelector("#gridwrapper");
+ let sidebar = document.querySelector("aside");
+ let belowbar = document.querySelector("#below_map");
+ let screen_small = window.matchMedia("(min-width: 500px)");
+ let screen_medium = window.matchMedia("(min-width: 600px)");
+
+ if (screen_medium.matches) {
+     elem.setAttribute("class", "grid_medium")
+ }
+
+}
+
+
+*/
+</script>
+</html>
