@@ -8,6 +8,7 @@
     .container {
       display: grid;
       grid-template-areas:
+        'nav'
         'header'
         'main'
         'footer';
@@ -41,6 +42,20 @@
             }
         }
 
+
+     nav {
+      grid-area: nav;
+      background-color: #228;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px;
+    }
+
+    nav a{color:white;}
 
     main {
       grid-area: main;
@@ -146,6 +161,23 @@
 <body>
 
   <div class="container">
+
+
+    <nav ><span class="title-and-version"><a href="/app/"><h1>Pytch</h1></a><span class="version-tag"><a href="/doc/releases/changelog.html">v1.11.1</a></span></span><ul><a href="https://pytch.scss.tcd.ie/"><li>About Pytch</li></a><a href="/doc/index.html"><li>Help</li></a><a href="/app/tutorials/"><li>Tutorials</li></a><a href="/app/my-projects/"><li>My projects</li></a></ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <header>
         <section class="subgrid-text">
           <h1>Welcome to Pytch!</h1>
