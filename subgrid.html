@@ -6,6 +6,60 @@
   <title>CSS Grid with Subgrid</title>
   <style>
 
+.ccont
+{
+  border-top-right-radius: 25px;
+  height: 90%;
+  width: 90%;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 20px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content */
+.modal-content {
+    border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
 
 
 nav .title-and-version h1,nav .title-and-version .h1{
@@ -69,17 +123,24 @@ nav ul li a{
       grid-template-columns: 1fr 2fr; /* One third and Two thirds */
       align-items: center;
             background-position: 55% 40%;
-             background-image: url('IMG_20230511_182016_068-1-scaledz.jpg');
+             background-image: url('IMG_20230511_182016_068-1-scaledz(1).jpg');
              background-size: 50%;
             background-size: cover;
             height: 60vh;
+    }
+
+
+    header p{
+        font-weight: bold;
+        text-shadow: 1px 0px 0px rgba(255,255,255,0.8);
+
     }
 
     @media only screen and (max-width: 768px) {
         header {
 
             grid-template-columns: 1fr; /* One third and Two thirds */
-
+            height: 100vh;
             }
         }
 
@@ -238,12 +299,12 @@ nav ul li a{
           <div class="cmain">
             <div class="ccontentwrap">
               <div class="ccontent">
-                <button id="myBtn">
-                  <video class="ccont" controls data-toggle="lightbox">
+                <button id="myBtn" aria-label="Video overview of Pytch">
+                 
                 
-                    <source src="Overview.mp4" type="video/mp4" />
+                    <img class="ccont" src="preview.png" alt="" title="Click here for an overview of Pytch!" />
 
-                  </video>
+                 
                 </button>
                
 
@@ -273,6 +334,19 @@ nav ul li a{
   </div>
 
 </body>
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span aria-label="Close" class="close">&times;</span>
+      <video class="ccont" controls data-toggle="lightbox">
+                  
+        <source src="Overview.mp4" type="video/mp4" />
+
+      </video>
+    </div>
+  
+  </div>
 <script>
 
 /*
@@ -293,4 +367,31 @@ window.onload = function(){
 
 */
 </script>
+<script>
+    // Get the modal
+    let modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    let btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 </html>
