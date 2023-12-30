@@ -173,13 +173,63 @@ nav ul li a{
     display: inline-block;
 }
 
+.coding_journey {
 
-.ipad {
-    vertical-align: middle;
-    display: inline-block;
-    width: 24%;
+
+  position: relative;
+
 
 }
+
+.coding_journey img {
+
+vertical-align: middle;
+display: inline-block;
+width: 24%;
+transition: transform 0.3s ease-out;
+cursor: pointer;
+
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Set the text color as needed */
+}
+
+
+
+
+    @keyframes wobble {
+      0% { transform: rotateZ(0deg); }
+      25% { transform: rotateZ(-8deg); }
+      50% { transform: rotateZ(8deg); }
+      75% { transform: rotateZ(-8deg); }
+      100% { transform: rotateZ(0deg); }
+    }
+
+    /* Apply wobbling effect on hover */
+    .coding_journey img:hover {
+      animation: wobble 0.5s ease-in-out;
+    }
+
+    .overlay-text {
+      position: relative;
+      top: 10%;
+      left: 50%;
+
+      color: rgb(237, 20, 20);
+      font-size: 76px;
+      font-weight: bold;
+
+
+    }
+
+
+
+    
 
     .container {
       display: grid;
@@ -387,7 +437,7 @@ nav ul li a{
                  
                 
                     <img class="ccont" src="preview.png" alt="" title="Click here for an overview of Pytch!" />
-
+                    
                  
                 </button>
                
@@ -408,8 +458,8 @@ nav ul li a{
       </section>
 
       </header>
-      <div class="first divider">
-        <img class="ipad" src="box2.png" />
+      <div class="first divider"><span class="coding_journey">
+        <img  src="box2.png" /><span class="image-text">image-text</span> </span>
         <div class="text-wrap">
             <p></p>
             <hr />
