@@ -5,6 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Grid with Subgrid</title>
   <style>
+.TutorialMiniCard img{
+  width: 200px;
+  margin: auto; /* Center the image horizontally within the item */
+  display: block; /* Remove extra spacing below image */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  
+}
+
+.outer-container {
+      display: flex;
+      align-items: center;
+    }
+
+#TutorialCarousel {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto; /* Enable horizontal scrolling if the content overflows */
+}
+
+.TutorialMiniCard {
+  /* Existing styling for each card */
+  flex: 1; /* This makes all items equal in size */
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: justify;
+  
+  /* New styling for hover effect */
+  cursor: pointer;
+}
+
+
+
+.TutorialMiniCard:hover img{
+    transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* Add a smooth transition effect */
+    transform: scale(1.2);
+    margin-bottom: 2px;
+}
+
+hr {
+  margin-top: -2px;
+  color:rgb(190, 0, 190);
+
+}
+
+
+.left-arrow, .right-arrow {
+      font-size: 44px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+
+
+
 
 .ccont
 {
@@ -324,29 +379,78 @@ nav ul li a{
       </section>
 
       </header>
+
     <main>
       <!-- Your main content goes here -->
       <p>Main Content Goes Here</p>
+      <div style="display:none" class="demo-cards">
+        <section role="alert" class="fade TutorialMiniCard alert alert-success show">
+          <h2>Catch a star</h2>
+          <p>
+            <img class="screenshot enabled" src="0.png" alt="screenshot of Catch a star">
+            </p>
+            <p>In this introduction to coding in Pytch, you control a bird using the keyboard, and your job is to catch the star.</p>
+        </section>
+        <section role="alert" class="fade TutorialMiniCard alert alert-success show">
+          <h2>Boing</h2>
+          <p>
+            <img class="screenshot enabled" src="1.png" alt="screenshot of Boing">
+            </p>
+            <p>In the game 
+              <i>Pong</i> from 1972, players hit a ball back and forth. Our 
+              <i>Boing</i> game, adapted from one in 
+              <a href="https://wireframe.raspberrypi.org/books/code-the-classics1">Code the Classics</a>, lets you play against the computer.
+            </p>
+        </section>
+        <section role="alert" class="fade TutorialMiniCard alert alert-success show">
+          <h2>Q*bert</h2>
+          <p>
+            <img class="screenshot enabled" src="2.png" alt="screenshot of Q*bert">
+            </p>
+            <p>Jump around a pyramid of blocks, trying to change the whole stack yellow without falling off! Our version is adapted from one in 
+              <a href="https://wireframe.raspberrypi.org/issues/42">Wireframe magazine</a>, inspired by the 1982 arcade classic.
+            </p>
+        </section>
+        <section role="alert" class="fade TutorialMiniCard alert alert-success show">
+          <h2>Splat the moles</h2>
+          <p>
+            <img class="screenshot enabled" src="3.png" alt="screenshot of Splat-The-Moles">
+            </p>
+            <p>A game where the player has to splat moles to score points. But if they miss, they lose all their points!
+            </p>
+        </section>
+    
+      </div>
+      <div class="outer-container">
+        <div class="left-arrow">&#x276C;</div>
+        <div id="TutorialCarousel">Next</div>
+        <div class="right-arrow">&#x276D;</div>
+      </div>
     </main>
     <footer>
       Footer
     </footer>
   </div>
 
+
+
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span aria-label="Close" class="close">&times;</span>
+          <video class="ccont" controls data-toggle="lightbox">
+                      
+            <source src="Overview.mp4" type="video/mp4" />
+    
+          </video>
+        </div>
+      
+      </div>
+
 </body>
-<div id="myModal" class="modal">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span aria-label="Close" class="close">&times;</span>
-      <video class="ccont" controls data-toggle="lightbox">
-                  
-        <source src="Overview.mp4" type="video/mp4" />
-
-      </video>
-    </div>
-  
-  </div>
 <script>
 
 /*
@@ -366,6 +470,104 @@ window.onload = function(){
 
 
 */
+
+
+
+
+
+
+
+// Create an array to store the objects
+let cards = [];
+const window_size = 3;
+const window_focus = 1;
+let window_position = 0;
+
+// Find all elements with the class "TutorialMiniCard"
+let tutorialMiniCards = document.querySelectorAll('.TutorialMiniCard');
+
+// Iterate through each element and build the object with node and children
+tutorialMiniCards.forEach((element) => {
+  let nodeObject = {
+    node: element,
+    children: Array.from(element.children)
+  };
+
+  // Push the object to the array
+  cards.push(nodeObject);
+});
+
+
+
+// Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
+console.log(cards);
+
+
+
+// Event listener for keydown event
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+    // Handle right or left arrow key press
+    handleArrowKeyPress(event.key);
+  }
+});
+
+
+const rightArrowElement = document.querySelector('.right-arrow');
+if (rightArrowElement) {
+  rightArrowElement.addEventListener('click', () => {
+    // Handle click on right arrow element
+    handleArrowKeyPress('ArrowRight');
+  });
+}
+const leftArrowElement = document.querySelector('.left-arrow');
+if (leftArrowElement) {
+  leftArrowElement.addEventListener('click', () => {
+    // Handle click on right arrow element
+    handleArrowKeyPress('ArrowRight');
+  });
+}
+
+
+function handleArrowKeyPress(key) {
+  console.log(`Arrow key pressed: ${key}`);
+  const tutorialCarousel = document.getElementById('TutorialCarousel');
+
+  if (tutorialCarousel) {
+    // Clear existing children
+    tutorialCarousel.innerHTML = '';
+
+    // Create a document fragment
+    const fragment = document.createDocumentFragment();
+
+    for (let i = window_position, steps = window_size; steps > 0; steps--) {
+      // Append the child element to the fragment
+      fragment.appendChild(cards[i].node);
+      console.log(cards[i]);
+
+      // Adjust the index based on the arrow key
+      if (key === 'ArrowRight') {
+        i = (i + 1) % cards.length; // Increment for right arrow
+      } else if (key === 'ArrowLeft') {
+        i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
+      }
+    }
+
+    // Append the fragment to "TutorialCarousel" in a single operation
+    tutorialCarousel.appendChild(fragment);
+  } else {
+    console.error('TutorialCarousel not found.');
+  }
+
+  // Update the window_position based on the arrow key
+  if (key === 'ArrowRight') {
+    window_position = (window_position + 1) % cards.length; // Increment for right arrow
+  } else if (key === 'ArrowLeft') {
+    window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
+  }
+}
+
+
 </script>
 <script>
     // Get the modal
