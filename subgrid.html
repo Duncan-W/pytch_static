@@ -45,7 +45,7 @@
 }
 
 hr {
-  margin-top: -2px;
+
   color:rgb(190, 0, 190);
 
 }
@@ -163,11 +163,17 @@ nav ul li a{
     text-decoration: none;
 }
 
-.first {
-    height: 100%;
-    line-height: 0;
-    margin-top: -4%;
+.text-wrap{
+    vertical-align: middle;
+    display:inline-block;
+    width:75%;
 }
+.text-wrap p {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+
 .ipad {
     vertical-align: middle;
     display: inline-block;
@@ -180,6 +186,7 @@ nav ul li a{
       grid-template-areas:
         'nav'
         'header'
+        'divider'
         'main'
         'footer';
       grid-template-rows: auto 1fr auto;
@@ -226,6 +233,13 @@ nav ul li a{
   align-items: center;
   margin: 0px;
 
+    }
+
+    .divider {
+      grid-area: divider;
+      height: 100%;
+    line-height: 0;
+    margin-top: -4%;
     }
 
 
@@ -392,7 +406,9 @@ nav ul li a{
           </div>
         </div>
       </section>
-      <div class="first">
+
+      </header>
+      <div class="first divider">
         <img class="ipad" src="box2.png" />
         <div class="text-wrap">
             <p></p>
@@ -400,12 +416,10 @@ nav ul li a{
             <p></p>
         </div> 
     </div>
-      </header>
-
 
     <main>
       <!-- Your main content goes here -->
-      <p>Main Content Goes Here</p>
+
       <div style="display:none" class="demo-cards">
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
           <h2>Catch a star</h2>
