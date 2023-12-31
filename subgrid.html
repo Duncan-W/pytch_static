@@ -31,8 +31,6 @@
   padding: 20px;
   box-sizing: border-box;
   text-align: justify;
-  
-  /* New styling for hover effect */
   cursor: pointer;
 }
 
@@ -78,8 +76,8 @@ hr {
   padding-top: 20px; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100%; 
+  height: 100%; 
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -168,64 +166,70 @@ nav ul li a{
     display:inline-block;
     width:75%;
 }
+
+
+
 .text-wrap p {
     vertical-align: middle;
     display: inline-block;
 }
 
 .coding_journey {
-
-
   position: relative;
-
-
 }
 
 .coding_journey img {
-
-vertical-align: middle;
-display: inline-block;
-width: 24%;
-transition: transform 0.3s ease-out;
-cursor: pointer;
-
+  vertical-align: middle;
+  display: inline-block;
+  width: 24%;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
 }
 
 .image-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; /* Set the text color as needed */
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  color: white; 
+  /* white-space: pre-line; */
+  width: 200px;
+  /* text-shadow: 1px 0px 0px rgba(0,0,0,0.8); */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .text-wrap{
+    display:none
+    }
+
+    .coding_journey img {
+    width: 80%;
+    height:70%
+    }
+
+    .image-text{
+        font-size: 200%;
+        width:400px;
+    }
+}
+
+
+@keyframes wobble {
+  0% { transform: rotateZ(0deg); }
+  25% { transform: rotateZ(-8deg); }
+  50% { transform: rotateZ(8deg); }
+  75% { transform: rotateZ(-8deg); }
+  100% { transform: rotateZ(0deg); }
+}
+
+/* Apply wobbling effect on hover for both image and text */
+.coding_journey:hover img,
+.coding_journey:hover .image-text {
+  animation: wobble 0.5s ease-in-out;
 }
 
 
 
-
-    @keyframes wobble {
-      0% { transform: rotateZ(0deg); }
-      25% { transform: rotateZ(-8deg); }
-      50% { transform: rotateZ(8deg); }
-      75% { transform: rotateZ(-8deg); }
-      100% { transform: rotateZ(0deg); }
-    }
-
-    /* Apply wobbling effect on hover */
-    .coding_journey img:hover {
-      animation: wobble 0.5s ease-in-out;
-    }
-
-    .overlay-text {
-      position: relative;
-      top: 10%;
-      left: 50%;
-
-      color: rgb(237, 20, 20);
-      font-size: 76px;
-      font-weight: bold;
-
-
-    }
 
 
 
@@ -459,7 +463,7 @@ cursor: pointer;
 
       </header>
       <div class="first divider"><span class="coding_journey">
-        <img  src="box2.png" /><span class="image-text">image-text</span> </span>
+        <img  src="box3.png" /><span class="image-text">Start your  coding journey</span> </span>
         <div class="text-wrap">
             <p></p>
             <hr />
