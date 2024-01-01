@@ -21,7 +21,7 @@
 #TutorialCarousel {
   display: flex;
   justify-content: space-between;
-  overflow-x: auto; /* Enable horizontal scrolling if the content overflows */
+  overflow-x: hidden;
 }
 
 .TutorialMiniCard {
@@ -176,6 +176,7 @@ nav ul li a{
 
 .coding_journey {
   position: relative;
+  cursor: pointer;
 }
 
 .coding_journey img {
@@ -183,7 +184,8 @@ nav ul li a{
   display: inline-block;
   width: 24%;
   transition: transform 0.3s ease-out;
-  cursor: pointer;
+  
+  
 }
 
 .image-text {
@@ -226,6 +228,7 @@ nav ul li a{
 .coding_journey:hover img,
 .coding_journey:hover .image-text {
   animation: wobble 0.5s ease-in-out;
+  
 }
 
 
@@ -351,7 +354,11 @@ nav ul li a{
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
   transform: scale(.18);
+}
 
+#myBtn {
+    cursor:pointer; 
+   
 }
 
 .ccont
@@ -395,6 +402,74 @@ nav ul li a{
   border-bottom-left-radius: 55px;
   border-bottom: 2px solid rgb(114, 114, 114);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.site-footer {
+  background-color: #3f6796;
+  color: white;
+  padding: 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-heading {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 40px; /* Adjust the size as needed */
+  margin-right: 10px;
+}
+
+.large-text {
+  font-size: 18px;
+}
+
+.footer-icons {
+  margin-top: 10px;
+}
+
+.footer-buttons {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-button {
+  font-size: 16px;
+}
+
+.right-buttons button {
+  font-size: 14px;
+}
+
+.footer-images {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-images img {
+  width: 100px; /* Adjust the size as needed */
+}
+
+
+
 
   </style>
 </head>
@@ -463,7 +538,7 @@ nav ul li a{
 
       </header>
       <div class="first divider"><span class="coding_journey">
-        <img  src="box3.png" /><span class="image-text">Start your  coding journey</span> </span>
+        <img  src="box3.png" alt="" /><span class="image-text">Start your  coding journey</span> </span>
         <div class="text-wrap">
             <p></p>
             <hr />
@@ -518,9 +593,32 @@ nav ul li a{
         <div class="right-arrow">&#x276D;</div>
       </div>
     </main>
-    <footer>
-      Footer
-    </footer>
+    <footer class="site-footer">
+        <div class="footer-content">
+          <div class="footer-heading">
+            <img src="your-logo.png" alt="Logo" class="footer-logo">
+            <h2>Footer Heading</h2>
+          </div>
+          <p class="large-text">Your large text paragraph goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="footer-icons">
+            <span>&#9993;</span> <!-- UTF-8 character for an envelope -->
+          </div>
+          <div class="footer-buttons">
+            <button class="left-button">Left Button</button>
+            <div class="right-buttons">
+              <button>Button 1</button>
+              <button>Button 2</button>
+              <button>Button 3</button>
+              <button>Button 4</button>
+            </div>
+          </div>
+          <div class="footer-images">
+            <img src="image1.png" alt="Image 1">
+            <img src="image2.png" alt="Image 2">
+            <img src="image3.png" alt="Image 3">
+          </div>
+        </div>
+      </footer>
   </div>
 
 
@@ -564,13 +662,18 @@ window.onload = function(){
 
 
 
+let screen_small = window.matchMedia("(max-width: 600px)");
+ let screen_medium = window.matchMedia("(min-width: 600px)");
 
-
+ let window_size = 3;
+ if (screen_small.matches) {
+    window_size = 1;
+ }
 
 
 // Create an array to store the objects
 let cards = [];
-const window_size = 3;
+
 const window_focus = 1;
 let window_position = 0;
 
