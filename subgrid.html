@@ -600,10 +600,12 @@ nav ul li a{
             <img src="your-logo.png" alt="Logo" class="footer-logo">
             <h2>Contact_</h2>
           </div>
-          <p class="large-text">Your large text paragraph goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="footer-icons">
-            <span>&#9993;</span> <!-- UTF-8 character for an envelope -->
-          </div>
+          <div class="footer-buttons">
+          <span style="padding-left: 5rem;font-size: 5rem;"><a style="color:white; text-decoration: none; " href="mailto:info@pytch.org">&#9993;</a></span> <!-- UTF-8 character for an envelope -->
+          <p class="large-text" style="margin:auto">Please email us at info@pytch.org with any feedback or suggestions</p>
+        </div>
+           
+
           <div class="footer-buttons">
             <button class="left-button">Left Button</button>
             <div class="right-buttons">
@@ -674,7 +676,7 @@ let screen_small = window.matchMedia("(max-width: 600px)");
  }
 
 
-// Create an array to store the objects
+
 let cards = [];
 
 const window_focus = 1;
@@ -695,13 +697,13 @@ tutorialMiniCards.forEach((element) => {
 });
 
 
+handleArrowKeyPress('ArrowRight'); // start Carousel
 
 // Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
 console.log(cards);
 
 
 
-// Event listener for keydown event
 document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
     // Handle right or left arrow key press
@@ -767,13 +769,13 @@ function handleArrowKeyPress(key) {
 
 </script>
 <script>
-    // Get the modal
+  
     let modal = document.getElementById("myModal");
     
-    // Get the button that opens the modal
+
     let btn = document.getElementById("myBtn");
     
-    // Get the <span> element that closes the modal
+
     let span = document.getElementsByClassName("close")[0];
     
     // When the user clicks the button, open the modal 
