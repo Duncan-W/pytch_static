@@ -40,6 +40,7 @@
     transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* Add a smooth transition effect */
     transform: scale(1.2);
     margin-bottom: 2px;
+    filter: drop-shadow(5px 5px 5px #222);
 }
 
 hr {
@@ -86,7 +87,7 @@ hr {
 
 /* Modal Content */
 .modal-content {
-    border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 -webkit-border-radius: 10px 10px 10px 10px;
 -moz-border-radius: 10px 10px 10px 10px;
   background-color: #fefefe;
@@ -155,6 +156,53 @@ nav ul li{
 nav ul li a{
     color:#fff
 }
+
+    /* Hamburger Menu Styles */
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger-menu div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 6px 0;
+    }
+
+    /* Media Query for Small Screens */
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hamburger-menu {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+
+
+
 
 .version-tag{
     color: #aaa;
@@ -238,83 +286,74 @@ nav ul li a{
 
     
 
-    .container {
-      display: grid;
-      grid-template-areas:
-        'nav'
-        'header'
-        'divider'
-        'main'
-        'footer';
-      grid-template-rows: auto 1fr auto;
-      min-height: 100vh;
+.container {
+     display: grid;
+     grid-template-areas: 
+     'nav' 
+     'header' 
+     'divider' 
+     'main' 
+     'footer';
+     grid-template-rows: auto 1fr auto;
+     min-height: 100vh;
+}
+ header {
+     grid-area: header;
+     display: grid;
+     text-align: center;
+     grid-template-columns: 1fr 2fr;
+    /* One third and Two thirds */
+     align-items: center;
+     background-position: 55% 40%;
+     background-image: url('IMG_20230511_182016_068-1-scaledz(1).jpg');
+     background-size: 50%;
+     background-size: cover;
+     height: 60vh;
+}
+ header p{
+     font-weight: bold;
+     text-shadow: 1px 0px 0px rgba(255,255,255,0.8);
+}
+ @media only screen and (max-width: 768px) {
+     header {
+         grid-template-columns: 1fr;
+        /* One third and Two thirds */
+         height: 100vh;
     }
-
-    header {
-      grid-area: header;
-      display: grid;
-      text-align: center;
-      grid-template-columns: 1fr 2fr; /* One third and Two thirds */
-      align-items: center;
-            background-position: 55% 40%;
-             background-image: url('IMG_20230511_182016_068-1-scaledz(1).jpg');
-             background-size: 50%;
-            background-size: cover;
-            height: 60vh;
-    }
-
-
-    header p{
-        font-weight: bold;
-        text-shadow: 1px 0px 0px rgba(255,255,255,0.8);
-
-    }
-
-    @media only screen and (max-width: 768px) {
-        header {
-
-            grid-template-columns: 1fr; /* One third and Two thirds */
-            height: 100vh;
-            }
-        }
-
-
-     nav {
-      grid-area: nav;
-      background-color: #228;
-  color: #fff;
-  padding: 4px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px;
-
-    }
-
-    .divider {
-      grid-area: divider;
-      height: 100%;
-    line-height: 0;
-    margin-top: -4%;
-    }
+}
+ nav {
+     grid-area: nav;
+     background-color: #228;
+     color: #fff;
+     padding: 4px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     margin: 0px;
+}
+ .divider {
+     grid-area: divider;
+     height: 100%;
+     line-height: 0;
+     margin-top: -4%;
+}
+ main {
+     grid-area: main;
+     padding: 20px;
+}
+ footer {
+     grid-area: footer;
+     text-align: center;
+     padding: 10px;
+     background-color: #333;
+     color: white;
+}
+ 
 
 
-    main {
-      grid-area: main;
-      padding: 20px;
-    }
 
-    footer {
-      grid-area: footer;
-      text-align: center;
-      padding: 10px;
-      background-color: #333;
-      color: white;
-    }
-
-
-    .cbody
+.cbody
 {
   margin: auto;
   position: relative;
@@ -329,6 +368,7 @@ nav ul li a{
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   background-color: black;
+  
 }
 .ctop
 {
@@ -345,6 +385,7 @@ nav ul li a{
   height: 125px;
   background-color: rgba(76, 76, 76, 0.42);
   text-align: center;
+  
 }
 
 .ccontent
@@ -354,7 +395,10 @@ nav ul li a{
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
   transform: scale(.18);
+  
 }
+
+
 
 #myBtn {
     cursor:pointer; 
@@ -366,6 +410,7 @@ nav ul li a{
   border-top-right-radius: 25px;
   height: 90%;
   width: 90%;
+  
 }
 
 .cbottom
@@ -387,6 +432,7 @@ nav ul li a{
   background: linear-gradient(0deg, rgb(114, 114, 114), rgb(255, 255, 255), rgb(197, 197, 197), rgb(114, 114, 114));
   -webkit-clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+
 }
 
 .cfoot
@@ -558,8 +604,28 @@ nav ul li a{
   <div class="container">
 
 
-    <nav ><span class="title-and-version"><a href="/app/"><h1>Pytch</h1></a><a class="version-tag" href="/doc/releases/changelog.html">v1.11.1</a></span><ul><a href="https://pytch.scss.tcd.ie/"><li>About Pytch</li></a><a href="/doc/index.html"><li>Help</li></a><a href="/app/tutorials/"><li>Tutorials</li></a><a href="/app/my-projects/"><li>My projects</li></a></ul>
-    </nav>
+    <nav>
+        <span class="title-and-version">
+          <a href="/app/"><h1>Pytch</h1></a>
+          <a class="version-tag" href="/doc/releases/changelog.html">v1.11.1</a>
+        </span>
+    
+        <div class="hamburger-menu" onclick="toggleNav()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+    
+        <ul>
+          <a href="https://pytch.scss.tcd.ie/"><li>About... </li></a>
+          <a href="/doc/index.html"><li>Help/Info?</li></a>
+          <a href="/app/tutorials/"><li>Tutorials</li></a>
+          <li>Demos</li>
+          <li>For teachers</li>
+          <a href="/app/my-projects/"><li>My projects</li></a>
+          <li>&#9993;</li>
+        </ul>
+      </nav>
 
 
 
@@ -725,6 +791,12 @@ nav ul li a{
 </body>
 
 <script>
+
+function toggleNav() {
+      const navUl = document.querySelector('nav ul');
+      navUl.classList.toggle('show');
+    }
+
 
 /*
 window.onload = function(){ 
