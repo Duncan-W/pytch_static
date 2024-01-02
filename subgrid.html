@@ -470,6 +470,85 @@ nav ul li a{
 }
 
 
+.button0 {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 15px; /* Adjust border-radius for rounded corners */
+  background-color: #a234ff; /* Adjust background color as needed */
+  color: #fff; /* Adjust text color as needed */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px; /* Adjust font size as needed */
+  cursor: pointer;
+}
+
+/* Optional: Hover effect */
+.button:hover {
+  background-color: #9009ff; /* Adjust hover background color */
+}
+
+.button1 {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 15px; /* Adjust border-radius for rounded corners */
+  background-color: #ff44b0; /* Adjust background color as needed */
+  color: #fff; /* Adjust text color as needed */
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px; /* Adjust font size as needed */
+  cursor: pointer;
+}
+
+.button {
+  position: relative;
+  margin: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 2.8px;
+  padding-bottom: 2.8px;
+  background: #0d5287;
+  color: white;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif; 
+}
+.button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+.button:hover {
+  background: #0585e8;
+}
+/* Arrow Buttons */
+/* ------------- */
+.next::after,
+.prev::after {
+  border-style: solid;
+}
+/* Next Button */
+/* ----------- */
+.next::after {
+  right: -22px;
+  border-width: 11px;
+  border-color: transparent transparent transparent #0d5287;
+}
+.next:hover::after {
+  border-left-color: #0585e8;
+}
+/* Prev Button */
+/* ----------- */
+.prev::after {
+  left: -22px;
+  border-color: transparent #0d5287 transparent transparent;
+  border-width: 11px;
+}
+.prev:hover::after {
+  border-right-color: #0585e8;
+}
 
 
   </style>
@@ -609,10 +688,10 @@ nav ul li a{
           <div class="footer-buttons">
             <button class="left-button">Left Button</button>
             <div class="right-buttons">
-              <button>Button 1</button>
-              <button>Button 2</button>
-              <button>Button 3</button>
-              <button>Button 4</button>
+              <button class="button0">Button 1</button>
+              <button class="button1">Button 2</button>
+              <button class="button">Button 3</button>
+              <a href="#" class="button next">Next</a>
             </div>
           </div>
           <div class="footer-images">
