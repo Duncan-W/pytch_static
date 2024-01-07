@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Grid with Subgrid</title>
   <style>
+
+
+/* ********** */
+/* Carousel  */
+/* ********** */
+
 .TutorialMiniCard img{
+  transition: transform 0.07s; /* smooth transition */
   width: 200px;
-  margin: auto; /* Center the image horizontally within the item */
+  margin: auto; 
   display: block; /* Remove extra spacing below image */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  
+  max-width: 90vw;
 }
 
 .outer-container {
@@ -37,7 +44,7 @@
 
 
 .TutorialMiniCard:hover img{
-    transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* Add a smooth transition effect */
+    transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* smooth transition */
     transform: scale(1.2);
     margin-bottom: 2px;
     filter: drop-shadow(5px 5px 5px #222);
@@ -68,13 +75,16 @@ hr {
 }
 
 
+/* ********** */
+/* Modal for video */
+/* ********** */
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 20px; /* Location of the box */
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 20px; 
   left: 0;
   top: 0;
   width: 100%; 
@@ -114,6 +124,9 @@ hr {
 
 
 
+/* ********** */
+/* Nav bar    */
+/* ********** */
 
 
 nav .title-and-version h1,nav .title-and-version .h1{
@@ -157,49 +170,48 @@ nav ul li a{
     color:#fff
 }
 
-    /* Hamburger Menu Styles */
-    .hamburger-menu {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
 
-    .hamburger-menu div {
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      margin: 6px 0;
-    }
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+}
 
-    /* Media Query for Small Screens */
-    @media screen and (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        z-index: 1;
-      }
+/* Media Query for Small Screens */
+@media screen and (max-width: 668px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1;
+  }
 
-      nav ul.show {
-        display: flex;
-      }
+  nav ul.show {
+    display: flex;
+  }
 
-      .hamburger-menu {
-        display: flex;
-      }
+  .hamburger-menu {
+    display: flex;
+  }
 
-      nav ul li {
-        margin: 0;
-        padding: 10px;
-        text-align: center;
-        width: 100%;
-      }
-    }
-
+  nav ul li {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
 
 
 
@@ -208,6 +220,12 @@ nav ul li a{
     color: #aaa;
     text-decoration: none;
 }
+
+
+
+/* ********** */
+/* divider between header and carousel */
+/* ********** */
 
 .text-wrap{
     vertical-align: middle;
@@ -247,21 +265,6 @@ nav ul li a{
 }
 
 
-@media only screen and (max-width: 768px) {
-    .text-wrap{
-    display:none
-    }
-
-    .coding_journey img {
-    width: 80%;
-    height:70%
-    }
-
-    .image-text{
-        font-size: 200%;
-        width:400px;
-    }
-}
 
 
 @keyframes wobble {
@@ -283,8 +286,9 @@ nav ul li a{
 
 
 
-
-    
+/* ********** */
+/* Grid specification */
+/* ********** */
 
 .container {
      display: grid;
@@ -317,8 +321,8 @@ nav ul li a{
  @media only screen and (max-width: 768px) {
      header {
          grid-template-columns: 1fr;
-        /* One third and Two thirds */
-         height: 100vh;
+        /* entire width */
+         height: 450px;
     }
 }
  nav {
@@ -340,7 +344,7 @@ nav ul li a{
 }
  main {
      grid-area: main;
-     padding: 20px;
+     padding: 2%;
 }
  footer {
      grid-area: footer;
@@ -405,6 +409,11 @@ nav ul li a{
    
 }
 
+
+/* ********** */
+/* Computer screen */
+/* ********** */
+
 .ccont
 {
   border-top-right-radius: 25px;
@@ -457,6 +466,9 @@ nav ul li a{
 
 
 
+/* ********** */
+/* footer     */
+/* ********** */
 
 
 
@@ -477,7 +489,7 @@ nav ul li a{
 }
 
 .footer-logo {
-  width: 40px; /* Adjust the size as needed */
+  width: 40px; 
   margin-right: 10px;
 }
 
@@ -540,10 +552,10 @@ nav ul li a{
   border: none;
   border-radius: 15px; /* Adjust border-radius for rounded corners */
   background-color: #ff44b0; /* Adjust background color as needed */
-  color: #fff; /* Adjust text color as needed */
+  color: #fff; 
   text-align: center;
   text-decoration: none;
-  font-size: 16px; /* Adjust font size as needed */
+  font-size: 16px; 
   cursor: pointer;
 }
 
@@ -595,6 +607,53 @@ nav ul li a{
 .prev:hover::after {
   border-right-color: #0585e8;
 }
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .text-wrap{
+    display:none;
+    height:0px
+    }
+
+    .divider{
+      margin-top: 0%;
+      
+    }
+
+    main{
+      margin-top: -15%
+    }
+
+    /* divider has a number of paragrah elements which add unwanted whitespace on small screens. 
+    Ensuring that text within coding journey has adequite space to not word wrap but not add unwanted page width is a pain */
+
+    .coding_journey img {
+    width: 60%;
+    height:60%;
+    min-width: 80vw;
+    margin-right: -40vw;
+    
+    }
+
+
+    .image-text{
+        font-size: 150%;
+        width:400px;
+        min-width:60vw;
+        max-width: 90vw;
+        text-shadow: 2px 2px 2px rgba(0,0,0,1);
+        filter: drop-shadow(-1px 0px 0px #000000); /*overlap of text and whitespace is hard to prevent - legibility */
+    }
+}
+
 
 
   </style>
