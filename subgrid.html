@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Grid with Subgrid</title>
-  <style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap" rel="stylesheet">   <style>
 
 
 /* ********** */
@@ -178,23 +180,24 @@ nav ul li a{
 }
 
 .hamburger-menu div {
-  width: 25px;
+  width: 30px;
   height: 3px;
   background-color: #fff;
   margin: 6px 0;
 }
 
 /* Media Query for Small Screens */
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 620px) {
   nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
     top: 60px;
-    left: 0;
-    width: 100%;
+    left: 10px;
+    width: 90%;
     background-color: #333;
     z-index: 1;
+    border-radius: 3px;
   }
 
   nav ul.show {
@@ -209,7 +212,7 @@ nav ul li a{
     margin: 0;
     padding: 10px;
     text-align: center;
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -357,6 +360,10 @@ nav ul li a{
 
 
 
+/* ********** */
+/* Computer screen */
+/* ********** */
+
 .cbody
 {
   margin: auto;
@@ -409,10 +416,6 @@ nav ul li a{
    
 }
 
-
-/* ********** */
-/* Computer screen */
-/* ********** */
 
 .ccont
 {
@@ -530,28 +533,10 @@ nav ul li a{
 
 .button0 {
   display: inline-block;
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 10px 20px; 
   border: none;
-  border-radius: 15px; /* Adjust border-radius for rounded corners */
-  background-color: #a234ff; /* Adjust background color as needed */
-  color: #fff; /* Adjust text color as needed */
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px; /* Adjust font size as needed */
-  cursor: pointer;
-}
-
-/* Optional: Hover effect */
-.button:hover {
-  background-color: #9009ff; /* Adjust hover background color */
-}
-
-.button1 {
-  display: inline-block;
-  padding: 10px 20px; /* Adjust padding as needed */
-  border: none;
-  border-radius: 15px; /* Adjust border-radius for rounded corners */
-  background-color: #ff44b0; /* Adjust background color as needed */
+  border-radius: 15px; 
+  background-color: #a234ff; 
   color: #fff; 
   text-align: center;
   text-decoration: none;
@@ -559,56 +544,79 @@ nav ul li a{
   cursor: pointer;
 }
 
+
+
 .button {
+  display: inline-block;
+  padding: 7px 15px;  
+  border: none;
+  border-radius: 10px;  
+  background-color: #ff44b0;  
+  color: #fff; 
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px; 
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; 
+}
+
+.button:hover {
+  background-color: #dc1d8c; 
+}
+
+
+.arrowbutton {
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px; 
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif; 
   position: relative;
   margin: 0;
+  border-left: solid #ff44b0;
+  border-top: solid #ff44b0;
+  border-bottom: solid #ff44b0;
+  border-width: 2px;
   padding-left: 14px;
   padding-right: 14px;
   padding-top: 2.8px;
   padding-bottom: 2.8px;
-  background: #0d5287;
-  color: white;
-  font-size: 14px;
-  font-family: 'Roboto', sans-serif; 
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background: transparent;
+  color: #ff44b0;
+  font-size: 18px; 
+
 }
-.button::after {
+.arrowbutton::after {
   content: '';
   position: absolute;
   top: 0;
-  width: 0;
-  height: 0;
+  background: linear-gradient(to right, #ff44b0 0%, transparent 100%); /* Arrow gradient */
+
 }
-.button:hover {
+.arrowbutton:hover {
   background: #0585e8;
 }
-/* Arrow Buttons */
-/* ------------- */
-.next::after,
-.prev::after {
-  border-style: solid;
-}
+
+
 /* Next Button */
 /* ----------- */
 .next::after {
-  right: -22px;
-  border-width: 11px;
-  border-color: transparent transparent transparent #0d5287;
+  right: -28px;
+  border-width: 14px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ff44b0;
+  
 }
 .next:hover::after {
   border-left-color: #0585e8;
 }
-/* Prev Button */
-/* ----------- */
-.prev::after {
-  left: -22px;
-  border-color: transparent #0d5287 transparent transparent;
-  border-width: 11px;
-}
-.prev:hover::after {
-  border-right-color: #0585e8;
-}
 
 
+.mail:hover{
+  text-shadow: 1px 1px 2px black;
+}
 
 
 
@@ -682,7 +690,7 @@ nav ul li a{
           <li>Demos</li>
           <li>For teachers</li>
           <a href="/app/my-projects/"><li>My projects</li></a>
-          <li>&#9993;</li>
+          <li class="mail">&#9993;</li>
         </ul>
       </nav>
 
@@ -709,7 +717,7 @@ nav ul li a{
         <section class="subgrid-video">
         
 
-          <p> Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch Scratch.</p>
+          <p> Dummy text to check responsiveness and positioning scratch scratch scratch scratch scratch scratch scratch scratch .</p>
 
 
 
@@ -802,10 +810,10 @@ nav ul li a{
         <div class="footer-content">
           <div class="footer-heading">
             <img src="your-logo.png" alt="Logo" class="footer-logo">
-            <h2>Contact_</h2>
+            <h2 style="font-family:Manrope; font-size: 2rem;">Contact<span>_</span></h2>
           </div>
           <div class="footer-buttons">
-          <span style="padding-left: 5rem;font-size: 5rem;"><a style="color:white; text-decoration: none; " href="mailto:info@pytch.org">&#9993;</a></span> <!-- UTF-8 character for an envelope -->
+          <span style="padding-left: 5rem;font-size: 5rem;"><a class="mail" style="color:white; text-decoration: none; " href="mailto:info@pytch.org">&#9993;</a></span> <!-- UTF-8 character for an envelope -->
           <p class="large-text" style="margin:auto">Please email us at info@pytch.org with any feedback or suggestions</p>
         </div>
            
@@ -813,10 +821,10 @@ nav ul li a{
           <div class="footer-buttons">
             <button class="left-button">Left Button</button>
             <div class="right-buttons">
-              <button class="button0">Button 1</button>
-              <button class="button1">Button 2</button>
-              <button class="button">Button 3</button>
-              <a href="#" class="button next">Next</a>
+              <button class="button">Tutorials</button>
+              <button class="button">Project</button>
+              <button class="button">Help</button>
+              <a href="#" class="arrowbutton next">team</a>
             </div>
           </div>
           <div class="footer-images">
@@ -892,7 +900,7 @@ let cards = [];
 const window_focus = 1;
 let window_position = 0;
 
-// Find all elements with the class "TutorialMiniCard"
+// Find all TutorialMiniCards (hope this isn't too much code smell)
 let tutorialMiniCards = document.querySelectorAll('.TutorialMiniCard');
 
 // Iterate through each element and build the object with node and children
@@ -902,7 +910,6 @@ tutorialMiniCards.forEach((element) => {
     children: Array.from(element.children)
   };
 
-  // Push the object to the array
   cards.push(nodeObject);
 });
 
