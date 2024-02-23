@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap" rel="stylesheet">   <style>
+/* Hansken Grotesk */
+/* Px Grotesk */
 
 .rounded-button {
     border-radius: 14px; /* Adjust the value to control the roundness of the corners */
@@ -16,15 +18,23 @@
     cursor: pointer; /* Add cursor pointer on hover */
     font-size: 16px; /* Set font size */
     margin: auto;
-    background-color: #446896;
-    border: 2px solid black;
+    background-color: #306998;
+    border: 2px solid #fff792;
+    width:200px; 
+    height:70px;        
+    margin-top: -35px; /* Adjust this value to control the overlap */
+    margin-left: calc(15% - 100px); /* Adjust this value to center horizontally */
 }
-
+.rounded-button:hover{filter: brightness(80%);}
+body{ background-color: #f8f8f8 !important;}
+nav{background-color: #306998 !important; border-bottom: 0.3rem solid #fff792}
+header{background-color: #306998 !important; border-bottom: 0.4rem solid #fff792 !important;}
+a {color:#fff792 !important; }
 .square {
   flex: 1;
   height: 200px; /* Adjust height as needed */
   margin: 0 10px; /* Adjust margin as needed for spacing */
-  background-color: #446896;
+  background-color: #306998;
   border-radius: 20px; /* Adjust border radius as needed */
   color:white;
   font-size: larger;
@@ -81,16 +91,26 @@ color: #ff44b0;
 .outer-container {
       display: flex;
       align-items: center;
-      background-color: #446896;
+      padding-left: 10vw;
+      
+      
+      
+     
     }
+
 
 #TutorialCarousel {
   display: flex;
   justify-content: space-between;
   overflow-x: hidden;
   color:white;
-  min-height: 520px;
+
+  
+  width: 70vw;
+  gap: 10px;
 }
+
+
 
 .TutorialMiniCard {
   /* Existing styling for each card */
@@ -99,8 +119,13 @@ color: #ff44b0;
   padding: 20px;
   box-sizing: border-box;
   text-align: justify;
+  border-radius: 10px;
+  background-color: #306998;
+  filter: drop-shadow(2);
+  min-height: 560px;
 
 }
+
 
 
 
@@ -254,7 +279,7 @@ nav ul li a{
     top: 60px;
     left: 10px;
     width: 90%;
-    background-color: #446896;
+    background-color: #306998;
     z-index: 1;
     border-radius: 3px;
   }
@@ -299,7 +324,8 @@ nav ul li a{
      'nav' 
      'header' 
      'divider' 
-     'main' 
+     'main'
+     'pinkish' 
      'footer';
      grid-template-rows: auto 1fr auto;
      min-height: 100vh;
@@ -354,6 +380,18 @@ nav ul li a{
      padding: 10px;
      background-color: #333;
      color: white;
+}
+
+
+.pink {
+  grid-area: pinkish;
+     text-align: center;
+     padding: 10px;
+     background-color: #00b5b0;
+     color: white;
+     border-top: 1.5px solid #306998;
+     border-bottom: 1.5px solid #306998;
+  
 }
  
 
@@ -1067,7 +1105,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
     min-width:189px;
     font-size:16px;
     text-align:center;
-    background-color: #446896;
+    background-color: #306998;
     color:#fff;
     justify-content:space-between;
     position:relative;
@@ -1148,7 +1186,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
     z-index:1;
     margin:0 -20px;
     padding:0 20px;
-    background-color: #446896;
+    background-color: #306998;
     min-width:inherit
 }
 
@@ -1289,411 +1327,362 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
   </style>
 </head>
 <body style="font-size:18px;">
-
-  <div class="container" >
-
-
-    <nav>
-        <span class="title-and-version">
-          <a href="/app/"><h1>Pytch</h1></a>
-          <a class="version-tag" href="/doc/releases/changelog.html">v1.11.1</a>
-        </span>
-    
-        <div class="hamburger-menu" onclick="toggleNav()" aria-label="click here for navigation menu">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-    
-        <ul>
-          <li><a href="https://pytch.scss.tcd.ie/">About... </a></li>
-          <li><a href="/doc/index.html">Help/Info?</a></li>
-          <li><a href="/app/tutorials/">Tutorials</a></li>
-          <li>Demos</li>
-          <li>For teachers</li>
-          <li><a href="/app/my-projects/">My projects</a></li>
-          <li class="mail">&#9993;</li>
-        </ul>
-      </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <header>
-        <section class="subgrid-text">
-          <h1>Welcome to Pytch!</h1>
-          <p>Pytch is a bridge from Scratch to Python.</p>
-
-          <p>It helps people to learn Python by building on skills they have developed in Scratch.</p>
-
-        </section>
-        <section class="subgrid-video">
-          <button id="myBtn" aria-label="Video overview of Pytch">
-                 
-
-            
-         
-       
-
-          <svg fill="#fff" height="200px" width="200px" version="1.1" id="play_button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-          viewBox="0 0 60 60"  style="width:200px;">
-          <g>
-            <title>Click here for an overview of Pytch!</title>
-            <path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30
-              c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15
-              C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z"/>
-            <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
-              S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
-          </g>
-        </svg>
-        <!-- svgrepo -->
-    
-      </button>
-        
-      </section>
-
-      </header>
-      
-
-      <div style="position:relative; margin:auto; padding-top:5px; ">
-       
-        <div class="nda_button" id="myBtn1" style="width:200px">
-        <span class="nda_button__inner">
-          &nbsp;&nbsp;<span class="nda_button__text" style="font-size:18px;"> Start your coding journey</span>
-        </span>
-        </div>
-      </div>
-
-
-
-
-    <main>
-      <!-- Your main content goes here -->
-
-      <div style="display:none;" class="demo-cards">
+  <div class="container">
+  <nav>
+     <span class="title-and-version">
+        <a href="/app/">
+           <h1>Pytch</h1>
+        </a>
+        <a class="version-tag" href="/doc/releases/changelog.html">v1.11.1</a>
+     </span>
+     <div class="hamburger-menu" onclick="toggleNav()" aria-label="click here for navigation menu">
+        <div></div>
+        <div></div>
+        <div></div>
+     </div>
+     <ul>
+        <li><a href="https://pytch.scss.tcd.ie/">About... </a></li>
+        <li><a href="/doc/index.html">Help/Info?</a></li>
+        <li><a href="/app/tutorials/">Tutorials</a></li>
+        <li>Demos</li>
+        <li>For teachers</li>
+        <li><a href="/app/my-projects/">My projects</a></li>
+        <li class="mail">&#9993;</li>
+     </ul>
+  </nav>
+  <header>
+     <section class="subgrid-text">
+        <h1>Welcome to Pytch!</h1>
+        <p>Pytch is a bridge from Scratch to Python.</p>
+        <p>It helps people to learn Python by building on skills they have developed in Scratch.</p>
+     </section>
+     <section class="subgrid-video">
+        <button id="myBtn" aria-label="Video overview of Pytch">
+           <svg fill="#fff" height="200px" width="200px" version="1.1" id="play_button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+              viewBox="0 0 60 60"  style="width:200px;">
+              <g>
+                 <title>Click here for an overview of Pytch!</title>
+                 <path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30
+                    c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+                    C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z"/>
+                 <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                    S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+              </g>
+           </svg>
+           <!-- svgrepo -->
+        </button>
+     </section>
+  </header>
+  <button class="rounded-button" >Start your  coding journey</button>
+  
+  <main>
+     <div style="display:none;" class="demo-cards">
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-          <h2>Catch a star</h2>
-
-            <img class="screenshot enabled" src="0.png" alt="screenshot of Catch a star">
-
-            <p>In this introduction to coding in Pytch, you control a bird using the keyboard, and your job is to catch the star.</p>
+           <h2>Catch a star</h2>
+           <img class="screenshot enabled" src="0.png" alt="screenshot of Catch a star">
+           <p>In this introduction to coding in Pytch, you control a bird using the keyboard, and your job is to catch the star.</p>
         </section>
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-          <h2>Boing</h2>
-          <p>
-            <img class="screenshot enabled" src="1.png" alt="screenshot of Boing">
-            </p>
-            <p>In the game 
-              <i>Pong</i> from 1972, players hit a ball back and forth. Our 
-              <i>Boing</i> game, adapted from one in 
+           <h2>Boing</h2>
+           <p>
+              <img class="screenshot enabled" src="1.png" alt="screenshot of Boing">
+           </p>
+           <p>In the game
+              <i>Pong</i> from 1972, players hit a ball back and forth. Our
+              <i>Boing</i> game, adapted from one in
               <a href="https://wireframe.raspberrypi.org/books/code-the-classics1">Code the Classics</a>, lets you play against the computer.
-            </p>
+           </p>
         </section>
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-          <h2>Q*bert</h2>
-          <p>
-            <img class="screenshot enabled" src="2.png" alt="screenshot of Q*bert">
-            </p>
-            <p>Jump around a pyramid of blocks, trying to change the whole stack yellow without falling off! Our version is adapted from one in 
+           <h2>Q*bert</h2>
+           <p>
+              <img class="screenshot enabled" src="2.png" alt="screenshot of Q*bert">
+           </p>
+           <p>Jump around a pyramid of blocks, trying to change the whole stack yellow without falling off! Our version is adapted from one in
               <a href="https://wireframe.raspberrypi.org/issues/42">Wireframe magazine</a>, inspired by the 1982 arcade classic.
-            </p>
+           </p>
         </section>
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
-          <h2>Splat the moles</h2>
-          <p>
-            <img class="screenshot enabled" src="3.png" alt="screenshot of Splat-The-Moles">
-            </p>
-            <p>A game where the player has to splat moles to score points. But if they miss, they lose all their points!
-            </p>
+           <h2>Splat the moles</h2>
+           <p>
+              <img class="screenshot enabled" src="3.png" alt="screenshot of Splat-The-Moles">
+           </p>
+           <p>A game where the player has to splat moles to score points. But if they miss, they lose all their points!
+           </p>
         </section>
-    
-      </div>
-      <div class="outer-container">
+     </div>
+     <div class="outer-container">
         <div class="left-arrow">&#x276C;</div>
         <div id="TutorialCarousel">Next</div>
         <div class="right-arrow">&#x276D;</div>
+     </div>
+
+  </main>
+  <section class="pink">
+
+    <div class="footer-content">
+      <div class="footer-heading">
+         <img src="your-logo.png" alt="Logo" class="footer-logo">
+         <h2 style="font-family:Manrope; font-size: 2rem;">An easy approach</h2>
       </div>
-    </main>
-    <footer class="site-footer">
-        <div class="footer-content">
-          <div class="footer-heading">
-            <img src="your-logo.png" alt="Logo" class="footer-logo">
-            <h2 style="font-family:Manrope; font-size: 2rem;">Contact<span>_</span></h2>
-          </div>
-          <div class="footer-buttons">
-          <span style="padding-left: 5rem;font-size: 5rem;"><a class="mail" style="color:white; text-decoration: none; " href="mailto:info@pytch.org">&#9993;</a></span> <!-- UTF-8 character for an envelope -->
-          <p class="large-text" style="margin:auto">Please email us at info@pytch.org with any feedback or suggestions</p>
-        </div>
+      <div class="footer-buttons">
+         <span style="padding-left: 5rem;font-size: 5rem;"><a class="mail" style="color:white; text-decoration: none; " href="mailto:info@pytch.org"></a></span>
+         <!-- UTF-8 character for an envelope -->
+         <p class="large-text" style="margin:auto"></p>
+      </div>
 
-        
-
-        <div class="cbody">
-          <div class="cmain">
-            <div class="ccontentwrap">
+      <div class="cbody">
+        <div class="cmain">
+           <div class="ccontentwrap">
               <div class="ccontent">
-                <button  aria-label="Video overview of Pytch">
-                 
-                
-                    <img class="ccont" src="16630.png" alt="" title="Click here for an overview of Pytch!" />
-                    
-                 
-                </button>
-               
-
-
+                 <button aria-label="Video overview of Pytch">
+                 <img class="ccont" src="16630.png" alt="" title="Click here for an overview of Pytch!" />
+                 </button>
               </div>
-            </div>
-          </div>
-          <div class="cbottom">
-          </div>
-          <div class="cleg">
-          </div>
-          <div class="cfootwrap">
-            <div class="cfoot">
-            </div>
-          </div>
+           </div>
         </div>
-           
+        <div class="cbottom">
+        </div>
+        <div class="cleg">
+        </div>
 
-          <div class="footer-buttons">
-            <button class="left-button">Left Button</button>
-            <div class="right-buttons">
+     </div>
+
+  </section>
+  <footer class="site-footer">
+     <div class="footer-content">
+        <div class="footer-heading">
+           <img src="your-logo.png" alt="Logo" class="footer-logo">
+           <h2 style=" font-size: 2rem;">Contact<span role="presentation">_</span></h2>
+        </div>
+        <div class="footer-buttons">
+           <span style="padding-left: 5rem;font-size: 5rem;"><a class="mail" style="color:white; text-decoration: none; " href="mailto:info@pytch.org">&#9993;</a></span>
+           <!-- UTF-8 character for an envelope -->
+           <p class="large-text" style="margin:auto">Please email us at info@pytch.org with any feedback or suggestions</p>
+        </div>
+
+        <div class="footer-buttons">
+           <button class="left-button">Left Button</button>
+           <div class="right-buttons">
               <button class="button">Tutorials</button>
               <button class="button">Project</button>
               <button class="button">Help</button>
               <a href="#" class="arrowbutton next">team</a>
-            </div>
-          </div>
-          <div class="footer-images">
-            <img src="Picture1.png" alt="Image 1">
-
-          </div>
+           </div>
         </div>
-
-
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span aria-label="Close" class="close">&times;</span>
-              <video class="ccont" controls data-toggle="lightbox">
-                          
-                <source src="Overview.mp4" type="video/mp4" />
-        
-              </video>
-            </div>
-          
-          </div>
-          <div id="myModal1" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span aria-label="Close" class="close">&times;</span>
-              <div style="display:flex">
-                <div class="square"><p>Start learning from basics with guided help and tutorials</p></div>
-                <div class="square"><p>Start with a blank environment and work on my own</p></div>
-                <div class="square"><p>View sample projects and learn from them</p></div>
+        <div class="footer-images">
+           <img src="Picture1.png" alt="Image 1">
+        </div>
+     </div>
+     <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+           <span aria-label="Close" class="close">&times;</span>
+           <video class="ccont" controls data-toggle="lightbox">
+              <source src="Overview.mp4" type="video/mp4" />
+           </video>
+        </div>
+     </div>
+     <div id="myModal1" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+           <span aria-label="Close" class="close">&times;</span>
+           <div style="display:flex">
+              <div class="square">
+                 <p>Start learning from basics with guided help and tutorials</p>
               </div>
-          
-          </div>
-      </footer>
+              <div class="square">
+                 <p>Start with a blank environment and work on my own</p>
+              </div>
+              <div class="square">
+                 <p>View sample projects and learn from them</p>
+              </div>
+           </div>
+        </div>
+  </footer>
   </div>
 
-
-  <button class="rounded-button" style="width:200px; height:70px; ">Start your  coding journey</button> 
-
-
-
-
+  <div style="position:relative; margin:auto; padding-top:5px; ">
+    <div class="nda_button" id="myBtn1" style="width:200px">
+       <span class="nda_button__inner">
+       &nbsp;&nbsp;<span class="nda_button__text" style="font-size:18px;"> Start your coding journey</span>
+       </span>
+    </div>
+ </div>
+  
   <script>
-
-    function toggleNav() {
-          const navUl = document.querySelector('nav ul');
-          navUl.classList.toggle('show');
-        }
-    
-    
-    /*
-    window.onload = function(){ 
-    
-     let elem = document.querySelector("#gridwrapper");
-     let sidebar = document.querySelector("aside");
-     let belowbar = document.querySelector("#below_map");
-     let screen_small = window.matchMedia("(min-width: 500px)");
-     let screen_medium = window.matchMedia("(min-width: 600px)");
-    
-     if (screen_medium.matches) {
-         elem.setAttribute("class", "grid_medium")
+     function toggleNav() {
+         const navUl = document.querySelector('nav ul');
+         navUl.classList.toggle('show');
      }
-    
-    }
-    
-    
-    */
-    
-    
-    
-    let screen_small = window.matchMedia("(max-width: 700px)");
+     
+     
+     /*
+     window.onload = function(){ 
+     
+      let elem = document.querySelector("#gridwrapper");
+      let sidebar = document.querySelector("aside");
+      let belowbar = document.querySelector("#below_map");
+      let screen_small = window.matchMedia("(min-width: 500px)");
+      let screen_medium = window.matchMedia("(min-width: 600px)");
+     
+      if (screen_medium.matches) {
+          elem.setAttribute("class", "grid_medium")
+      }
+     
+     }
+     
+     
+     */
+     
+     
+     
+     let screen_small = window.matchMedia("(max-width: 700px)");
      let screen_medium = window.matchMedia("(min-width: 700px)");
-    
+     
      let window_size = 3;
      if (screen_small.matches) {
-        window_size = 1;
+         window_size = 1;
      }
-    
-    
-    
-    let cards = [];
-    
-    const window_focus = 1;
-    let window_position = 0;
-    
-    // Find all TutorialMiniCards (hope this isn't too much code smell)
-    let tutorialMiniCards = document.querySelectorAll('.TutorialMiniCard');
-    
-    // Iterate through each element and build the object with node and children
-    tutorialMiniCards.forEach((element) => {
-      let nodeObject = {
-        node: element,
-        children: Array.from(element.children)
-      };
-    
-      cards.push(nodeObject);
-    });
-    
-    
-    handleArrowKeyPress('ArrowRight'); // start Carousel
-    
-    // Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
-    console.log(cards);
-    
-    
-    
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-        // Handle right or left arrow key press
-        handleArrowKeyPress(event.key);
-      }
-    });
-    
-    
-    const rightArrowElement = document.querySelector('.right-arrow');
-    if (rightArrowElement) {
-      rightArrowElement.addEventListener('click', () => {
-        // Handle click on right arrow element
-        handleArrowKeyPress('ArrowRight');
-      });
-    }
-    const leftArrowElement = document.querySelector('.left-arrow');
-    if (leftArrowElement) {
-      leftArrowElement.addEventListener('click', () => {
-        // Handle click on right arrow element
-        handleArrowKeyPress('ArrowRight');
-      });
-    }
-    
-    
-    function handleArrowKeyPress(key) {
-      console.log(`Arrow key pressed: ${key}`);
-      const tutorialCarousel = document.getElementById('TutorialCarousel');
-    
-      if (tutorialCarousel) {
-        // Clear existing children
-        tutorialCarousel.innerHTML = '';
-    
-        // Create a document fragment
-        const fragment = document.createDocumentFragment();
-    
-        for (let i = window_position, steps = window_size; steps > 0; steps--) {
-          // Append the child element to the fragment
-          fragment.appendChild(cards[i].node);
-          console.log(cards[i]);
-    
-          // Adjust the index based on the arrow key
-          if (key === 'ArrowRight') {
-            i = (i + 1) % cards.length; // Increment for right arrow
-          } else if (key === 'ArrowLeft') {
-            i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
-          }
-        }
-    
-        // Append the fragment to "TutorialCarousel" in a single operation
-        tutorialCarousel.appendChild(fragment);
-      } else {
-        console.error('TutorialCarousel not found.');
-      }
-    
-      // Update the window_position based on the arrow key
-      if (key === 'ArrowRight') {
-        window_position = (window_position + 1) % cards.length; // Increment for right arrow
-      } else if (key === 'ArrowLeft') {
-        window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
-      }
-    }
-    
-    
-    </script>
-    <script>
-      // Get references to both modals and buttons. If we have more than 2 this should be changed.
-      let modal = document.getElementById("myModal");
-      let modal1 = document.getElementById("myModal1");
-    
-        // Get references to both buttons
-        let btn = document.getElementById("myBtn");
-      let btn1 = document.getElementById("myBtn1");
-    
-      // Get references to close buttons for both modals
-      let closeButtons = document.querySelectorAll('.close');
-    
-      // Function to open the modal
-      function openModal(modal) {
-        modal.style.display = "block";
-      }
-    
-      // Function to close the modal
-      function closeModal(modal) {
-        modal.style.display = "none";
-      }
-    
-      // Add event listeners to buttons to open modals
-      btn.addEventListener("click", function() {
-        openModal(modal);
-      });
-    
-      btn1.addEventListener("click", function() {
-        openModal(modal1);
-      });
-    
-      
-    
-    // Add click event listener to each close button
-    closeButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-            // Run the provided code when the close button is clicked
-            modal.style.display = "none";
-        });
-    });
-    
-      // Close modals when clicking outside
-      document.addEventListener("click", function(event) {
-        if (event.target === modal) {
-          closeModal(modal);
-        } else if (event.target === modal1) {
-          closeModal(modal1);
-        }
-      });
-    </script>
+     
+     
+     
+     let cards = [];
+     
+     const window_focus = 1;
+     let window_position = 0;
+     
+     // Find all TutorialMiniCards (hope this isn't too much code smell)
+     let tutorialMiniCards = document.querySelectorAll('.TutorialMiniCard');
+     
+     // Iterate through each element and build the object with node and children
+     tutorialMiniCards.forEach((element) => {
+         let nodeObject = {
+             node: element,
+             children: Array.from(element.children)
+         };
+     
+         cards.push(nodeObject);
+     });
+     
+     
+     handleArrowKeyPress('ArrowRight'); // start Carousel
+     
+     // Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
+     console.log(cards);
+     
+     
+     
+     document.addEventListener('keydown', (event) => {
+         if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+             // Handle right or left arrow key press
+             handleArrowKeyPress(event.key);
+         }
+     });
+     
+     
+     /* Handle left/right arrow click events */
+     const rightArrowElement = document.querySelector('.right-arrow');
+     if (rightArrowElement) {
+         rightArrowElement.addEventListener('click', () => {
+             handleArrowKeyPress('ArrowRight');
+         });
+     }
+     const leftArrowElement = document.querySelector('.left-arrow');
+     if (leftArrowElement) {
+         leftArrowElement.addEventListener('click', () => {
+             handleArrowKeyPress('ArrowRight');
+         });
+     }
+     
+     
+     function handleArrowKeyPress(key) {
+         console.log(`Arrow key pressed: ${key}`);
+         const tutorialCarousel = document.getElementById('TutorialCarousel');
+     
+         if (tutorialCarousel) {
+             // Clear existing children
+             tutorialCarousel.innerHTML = '';
+     
+             // Create a document fragment
+             const fragment = document.createDocumentFragment();
+     
+             for (let i = window_position, steps = window_size; steps > 0; steps--) {
+                 // Append the child element to the fragment
+                 fragment.appendChild(cards[i].node);
+                 console.log(cards[i]);
+     
+                 // Adjust the index based on the arrow key
+                 if (key === 'ArrowRight') {
+                     i = (i + 1) % cards.length; // Increment for right arrow
+                 } else if (key === 'ArrowLeft') {
+                     i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
+                 }
+             }
+     
+             // Append the fragment to "TutorialCarousel" in a single operation
+             tutorialCarousel.appendChild(fragment);
+         } else {
+             console.error('TutorialCarousel not found.');
+         }
+     
+         // Update the window_position based on the arrow key
+         if (key === 'ArrowRight') {
+             window_position = (window_position + 1) % cards.length; // Increment for right arrow
+         } else if (key === 'ArrowLeft') {
+             window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
+         }
+     }
+  </script>
+  <script>
+     // Get references to both modals and buttons. If we have more than 2 this should be changed.
+     let modal = document.getElementById("myModal");
+     let modal1 = document.getElementById("myModal1");
+     
+     // Get references to both buttons
+     let btn = document.getElementById("myBtn");
+     let btn1 = document.getElementById("myBtn1");
+     
+     // Get references to close buttons for both modals
+     let closeButtons = document.querySelectorAll('.close');
+     
+     // Function to open the modal
+     function openModal(modal) {
+         modal.style.display = "block";
+     }
+     
+     // Function to close the modal
+     function closeModal(modal) {
+         modal.style.display = "none";
+     }
+     
+     // Add event listeners to buttons to open modals
+     btn.addEventListener("click", function () {
+         openModal(modal);
+     });
+     
+     btn1.addEventListener("click", function () {
+         openModal(modal1);
+     });
+     
+     
+     
+     // Add click event listener to each close button
+     closeButtons.forEach(function (button) {
+         button.addEventListener('click', function () {
+             // Run the provided code when the close button is clicked
+             modal.style.display = "none";
+         });
+     });
+     
+     // Close modals when clicking outside
+     document.addEventListener("click", function (event) {
+         if (event.target === modal) {
+             closeModal(modal);
+         } else if (event.target === modal1) {
+             closeModal(modal1);
+         }
+     });
+  </script>
 </body>
-
-
-
 </html>
