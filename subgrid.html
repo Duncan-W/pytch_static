@@ -1545,102 +1545,133 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
      
      
      
-     let screen_small = window.matchMedia("(max-width: 700px)");
-     let screen_medium = window.matchMedia("(min-width: 700px)");
-     
-     let window_size = 3;
-     if (screen_small.matches) {
-         window_size = 1;
-     }
-     
-     
-     
+     const screen_small = window.matchMedia("(max-width: 800px)");
+     const screen_medium = window.matchMedia("(max-width: 1100px)");
+
      let cards = [];
-     
-     const window_focus = 1;
-     let window_position = 0;
-     
+
+
+
      // Find all TutorialMiniCards (hope this isn't too much code smell)
      let tutorialMiniCards = document.querySelectorAll('.TutorialMiniCard');
-     
+
      // Iterate through each element and build the object with node and children
      tutorialMiniCards.forEach((element) => {
          let nodeObject = {
              node: element,
              children: Array.from(element.children)
          };
-     
+
          cards.push(nodeObject);
      });
-     
-     
-     handleArrowKeyPress('ArrowRight'); // start Carousel
-     
      // Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
      console.log(cards);
-     
-     
-     
-     document.addEventListener('keydown', (event) => {
-         if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
-             // Handle right or left arrow key press
-             handleArrowKeyPress(event.key);
-         }
-     });
-     
-     
-     /* Handle left/right arrow click events */
-     const rightArrowElement = document.querySelector('.right-arrow');
-     if (rightArrowElement) {
-         rightArrowElement.addEventListener('click', () => {
-             handleArrowKeyPress('ArrowRight');
-         });
-     }
-     const leftArrowElement = document.querySelector('.left-arrow');
-     if (leftArrowElement) {
-         leftArrowElement.addEventListener('click', () => {
-             handleArrowKeyPress('ArrowRight');
-         });
-     }
-     
-     
-     function handleArrowKeyPress(key) {
-         console.log(`Arrow key pressed: ${key}`);
-         const tutorialCarousel = document.getElementById('TutorialCarousel');
-     
-         if (tutorialCarousel) {
-             // Clear existing children
-             tutorialCarousel.innerHTML = '';
-     
-             // Create a document fragment
-             const fragment = document.createDocumentFragment();
-     
-             for (let i = window_position, steps = window_size; steps > 0; steps--) {
-                 // Append the child element to the fragment
-                 fragment.appendChild(cards[i].node);
-                 console.log(cards[i]);
-     
-                 // Adjust the index based on the arrow key
-                 if (key === 'ArrowRight') {
-                     i = (i + 1) % cards.length; // Increment for right arrow
-                 } else if (key === 'ArrowLeft') {
-                     i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
-                 }
-             }
-     
-             // Append the fragment to "TutorialCarousel" in a single operation
-             tutorialCarousel.appendChild(fragment);
+
+     let current_window_size;
+
+     function updateWindowSize() {
+         let new_window_size;
+
+         if (screen_small.matches) {
+             new_window_size = 1;
+         } else if (screen_medium.matches) {
+             new_window_size = 2;
          } else {
-             console.error('TutorialCarousel not found.');
+             new_window_size = 3;
          }
-     
-         // Update the window_position based on the arrow key
-         if (key === 'ArrowRight') {
-             window_position = (window_position + 1) % cards.length; // Increment for right arrow
-         } else if (key === 'ArrowLeft') {
-             window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
+
+         if (new_window_size !== current_window_size) {
+             current_window_size = new_window_size;
+             console.log("Window size changed to " + current_window_size);
+             createCards(current_window_size);
          }
      }
+     // Initial update of window_size
+     updateWindowSize();
+
+     // Add event listener for window resize
+     window.addEventListener('resize', updateWindowSize);
+
+     function createCards(window_size) {
+
+         console.log(" BUILDING " + window_size);
+
+
+         const window_focus = 1;
+         let window_position = 0;
+
+
+         handleArrowKeyPress('ArrowRight'); // start Carousel
+
+
+
+
+         document.addEventListener('keydown', (event) => {
+             if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                 // Handle right or left arrow key press
+                 handleArrowKeyPress(event.key);
+             }
+         });
+
+
+         /* Handle left/right arrow click events */
+         const rightArrowElement = document.querySelector('.right-arrow');
+         if (rightArrowElement) {
+             rightArrowElement.addEventListener('click', () => {
+                 handleArrowKeyPress('ArrowRight');
+             });
+         }
+         const leftArrowElement = document.querySelector('.left-arrow');
+         if (leftArrowElement) {
+             leftArrowElement.addEventListener('click', () => {
+                 handleArrowKeyPress('ArrowRight');
+             });
+         }
+
+         function handleArrowKeyPress(key) {
+             //console.log(`Arrow key pressed: ${key}`);
+             const tutorialCarousel = document.getElementById('TutorialCarousel');
+
+             if (tutorialCarousel) {
+                 // Clear existing children
+                 tutorialCarousel.innerHTML = '';
+
+                 // Create a document fragment
+                 const fragment = document.createDocumentFragment();
+
+                 for (let i = window_position, steps = window_size; steps > 0; steps--) {
+
+                     // Append the child element to the fragment
+                     fragment.appendChild(cards[i].node);
+                     //console.log(cards[i]);
+
+                     // Adjust the index based on the arrow key
+                     if (key === 'ArrowRight') {
+                         i = (i + 1) % cards.length; // Increment for right arrow
+                     } else if (key === 'ArrowLeft') {
+                         i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
+                     }
+                 }
+
+                 // Append the fragment to "TutorialCarousel" in a single operation
+                 tutorialCarousel.appendChild(fragment);
+             } else {
+                 console.error('TutorialCarousel not found.');
+             }
+
+             // Update the window_position based on the arrow key
+             if (key === 'ArrowRight') {
+                 window_position = (window_position + 1) % cards.length; // Increment for right arrow
+             } else if (key === 'ArrowLeft') {
+                 window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
+             }
+         }
+     }
+     
+
+     
+     
+
   </script>
   <script>
      // Get references to both modals and buttons. If we have more than 2 this should be changed.
