@@ -1429,7 +1429,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
     <div class="footer-content">
       <div class="footer-heading">
          <img src="your-logo.png" alt="Logo" class="footer-logo">
-         <h2 style="font-family:Manrope; font-size: 2rem;">An easy approach</h2>
+         <h2 style="font-size: 2rem;">An easy approach</h2>
       </div>
       <div class="footer-buttons">
          <span style="padding-left: 5rem;font-size: 5rem;"><a class="mail" style="color:white; text-decoration: none; " href="mailto:info@pytch.org"></a></span>
@@ -1525,24 +1525,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
      }
      
      
-     /*
-     window.onload = function(){ 
-     
-      let elem = document.querySelector("#gridwrapper");
-      let sidebar = document.querySelector("aside");
-      let belowbar = document.querySelector("#below_map");
-      let screen_small = window.matchMedia("(min-width: 500px)");
-      let screen_medium = window.matchMedia("(min-width: 600px)");
-     
-      if (screen_medium.matches) {
-          elem.setAttribute("class", "grid_medium")
-      }
-     
-     }
-     
-     
-     */
-     
+
      
      
      const screen_small = window.matchMedia("(max-width: 800px)");
@@ -1624,7 +1607,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
          const leftArrowElement = document.querySelector('.left-arrow');
          if (leftArrowElement) {
              leftArrowElement.addEventListener('click', () => {
-                 handleArrowKeyPress('ArrowRight');
+                 handleArrowKeyPress('ArrowLeft');
              });
          }
 
