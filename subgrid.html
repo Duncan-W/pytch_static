@@ -7,6 +7,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap" rel="stylesheet">   <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Hansken Grotesk */
 /* Px Grotesk */
 
@@ -331,7 +349,7 @@ nav ul li a{
      'header' 
      'divider' 
      'main'
-     'pinkish' 
+     'easyish' 
      'footer';
      grid-template-rows: auto 1fr auto;
      min-height: 100vh;
@@ -389,16 +407,38 @@ nav ul li a{
 }
 
 
-.pink {
-  grid-area: pinkish;
+.easy {
+  grid-area: easyish;
      text-align: center;
      padding: 10px;
      background-color: #00b5b0;
      color: white;
      border-top: 1.5px solid #306998;
      border-bottom: 1.5px solid #306998;
+     margin-bottom: 20px;
   
 }
+
+
+
+  .easy .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .easy .footer-buttons,
+  .easy .cbody {
+    flex: 1;
+    margin-bottom: 20px; /* Add some spacing between the two items */
+  }
+
+  /* Media query for mobile */
+  @media (max-width: 768px) {
+    .easy .footer-content {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  }
  
 
 
@@ -1424,7 +1464,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
      </div>
 
   </main>
-  <section class="pink">
+  <section class="easy">
 
     <div class="footer-content">
       <div class="footer-heading">
