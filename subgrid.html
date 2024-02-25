@@ -47,7 +47,7 @@
 body{ background-color: #f8f8f8 !important;}
 nav{background-color: #306998 !important; border-bottom: 0.3rem solid #fff792}
 header{background-color: #306998 !important; border-bottom: 0.4rem solid #fff792 !important;}
-a {color:#fff792 !important; }
+li, a {color:#fff792 !important; }
 .square {
   flex: 1;
   height: 200px; /* Adjust height as needed */
@@ -1419,7 +1419,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
         </button>
      </section>
   </header>
-  <button class="rounded-button" >Start your  coding journey</button>
+  <button id="myBtn1"  class="rounded-button" >Start your  coding journey</button>
   
   <main>
      <div style="display:none;" class="demo-cards">
@@ -1497,17 +1497,21 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
     <h2 style="font-size: 2rem;">Two ways of writing code</h2>
   
     <div class="footer-content">
-      <div class="footer-buttons">
-        <p>Here you can see what the Pytch environment looks like - providing a single screen where students can code, run their programs, and choose resources from our media library.</p>
+      <div>
+        <img src="sbs.png">
+        <p>Script by script</p>
       </div>
-      <div style="margin: 20px;">
-        <div class="cbody">
-          <div class="cbottom"></div>
-          <div class="cleg"></div>
-        </div>
+      <div>
+        <img src="bp.png">
+        <p>One big program</p>
       </div>
     </div>
+    
   </section>
+
+
+
+  
   <footer class="site-footer">
      <div class="footer-content">
         <div class="footer-heading">
@@ -1564,7 +1568,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
   </div>
 
   <div style="position:relative; margin:auto; padding-top:5px; ">
-    <div class="nda_button" id="myBtn1" style="width:200px">
+    <div class="nda_button" style="width:200px">
        <span class="nda_button__inner">
        &nbsp;&nbsp;<span class="nda_button__text" style="font-size:18px;"> Start your coding journey</span>
        </span>
