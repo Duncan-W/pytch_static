@@ -8,7 +8,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap" rel="stylesheet">   <style>
 
-
+.sitemap {
+    display: flex; /* Use flexbox to arrange lists side by side */
+  }
+  
+  .sitemap ul {
+    list-style-type: none; /* Remove default bullets */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .sitemap li {
+    margin: 10px; /* Adjust spacing between list items */
+  }
 
 
 
@@ -50,10 +62,10 @@ header{background-color: #306998 !important; border-bottom: 0.4rem solid #fff792
 li, a {color:#fff792 !important; }
 .square {
   flex: 1;
-  height: 200px; /* Adjust height as needed */
-  margin: 0 10px; /* Adjust margin as needed for spacing */
+  height: 200px; 
+  margin: 0 10px; 
   background-color: #306998;
-  border-radius: 20px; /* Adjust border radius as needed */
+  border-radius: 20px; 
   color:white;
   font-size: larger;
   text-align: center;
@@ -423,13 +435,13 @@ nav ul li a{
 
 
 
-  .easy .footer-content {
+  .easy .section-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .easy .footer-buttons,
+  .easy .section-buttons,
   .easy .cbody {
     flex: 1;
     margin: 20px; /* Add some spacing between the two items */
@@ -437,7 +449,7 @@ nav ul li a{
 
   /* Media query for mobile */
   @media (max-width: 768px) {
-    .easy .footer-content {
+    .easy .section-content {
       flex-direction: column; /* Stack items vertically on smaller screens */
     }
   }
@@ -566,17 +578,17 @@ nav ul li a{
   padding: 20px;
 }
 
-.footer-content {
+.section-content {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-heading {
+.section-heading {
   display: flex;
   align-items: center;
 }
 
-.footer-logo {
+.section-logo {
   width: 40px; 
   margin-right: 10px;
 }
@@ -585,11 +597,11 @@ nav ul li a{
   font-size: 18px;
 }
 
-.footer-icons {
+.section-icons {
   margin-top: 10px;
 }
 
-.footer-buttons {
+.section-buttons {
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -604,13 +616,13 @@ nav ul li a{
   font-size: 14px;
 }
 
-.footer-images {
+.section-images {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.footer-images img {
+.section-images img {
   width: 80vw; /* Adjust the size as needed */
   margin:auto;
 }
@@ -1242,13 +1254,13 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
   </main>
   <section class="easy">
 
-     <div class="footer-heading">
-      <img src="your-logo.png" alt="Logo" class="footer-logo">
+     <div class="section-heading">
+      <img src="your-logo.png" alt="Logo" class="section-logo">
       <h2 style="font-size: 2rem;">An easy approach</h2>
     </div>
   
-    <div class="footer-content">
-      <div class="footer-buttons">
+    <div class="section-content">
+      <div class="section-buttons">
         <p>Here you can see what the Pytch environment looks like - providing a single screen where students can code, run their programs, and choose resources from our media library.</p>
       </div>
       <div style="margin: 20px;">
@@ -1272,7 +1284,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
   
     <h2 style="font-size: 2rem;">Two ways of writing code</h2>
   
-    <div class="footer-content">
+    <div class="section-content">
       <div>
         <img src="sbs.png">
         <p>Script by script</p>
@@ -1289,18 +1301,67 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
 
   
   <footer class="site-footer">
-     <div class="footer-content">
-        <div class="footer-heading">
-           <img src="your-logo.png" alt="Logo" class="footer-logo">
-           <h2 style=" font-size: 2rem;">Contact<span role="presentation">_</span></h2>
+     <div class="section-content">
+        <div class="section-heading">
+           <img src="your-logo.png" alt="Logo" class="section-logo">
+           <h2 style=" font-size: 2rem;">SiteMap<span role="presentation">_</span></h2>
         </div>
-        <div class="footer-buttons">
+        <div class="section-buttons">
            <span style="padding-left: 5rem;font-size: 5rem;"><a class="mail" style="color:white; text-decoration: none; " href="mailto:info@pytch.org">&#9993;</a></span>
            <!-- UTF-8 character for an envelope -->
            <p class="large-text" style="margin:auto">Please email us at info@pytch.org with any feedback or suggestions</p>
         </div>
 
-        <div class="footer-buttons">
+
+
+
+
+
+
+
+
+
+
+        
+<div class="sitemap">
+  <div class="list-container">
+    <h2>List 1</h2>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+  
+  <div class="list-container">
+    <h2>List 2</h2>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+  
+  <div class="list-container">
+    <h2>List 3</h2>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+  
+  <div class="list-container">
+    <h2>List 4</h2>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+</div>
+
+        <div class="section-buttons">
            <button class="left-button">Left Button</button>
            <div class="right-buttons">
               <button class="button">Tutorials</button>
@@ -1309,7 +1370,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
               <a href="#" class="arrowbutton next">team</a>
            </div>
         </div>
-        <div class="footer-images">
+        <div class="section-images">
            <img src="Picture1.png" alt="Image 1">
         </div>
      </div>
@@ -1404,7 +1465,6 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
 
      function createCards(window_size) {
 
-         console.log(" BUILDING " + window_size);
 
 
          const window_focus = 1;
