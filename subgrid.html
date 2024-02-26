@@ -57,6 +57,7 @@ li, a {color:#fff792 !important; }
   color:white;
   font-size: larger;
   text-align: center;
+  padding:5px;
 }
 
 .square:hover{
@@ -78,7 +79,7 @@ button {    background-color: transparent;
     }
 
     #play_button:hover {
-      filter: drop-shadow(0 0 10px rgba(255, 2, 2, 0.8)); /* Increase shadow on hover */
+      filter: drop-shadow(0 0 10px rgba(255, 2, 2)); /* Increase shadow on hover */
     }
 
 
@@ -94,6 +95,7 @@ button {    background-color: transparent;
   margin: auto; 
   display: block; /* Remove extra spacing below image */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(5px 5px 5px #222);
   max-width: 90vw;
 }
 
@@ -102,7 +104,7 @@ color: #ff44b0;
 }
 
 .TutorialMiniCard p{
-  margin-top: 20px;
+  margin-top: 30px;
 }
  
 
@@ -148,10 +150,10 @@ color: #ff44b0;
 
 
 .TutorialMiniCard:hover img{
-    transition: transform 0.2s ease-in-out, flex-grow 0.2s ease-in-out; /* smooth transition */
+    transition: transform 0.3s ease-in-out, flex-grow 0.3s ease-in-out; /* smooth transition */
     transform: scale(1.2);
     margin-bottom: 2px;
-    filter: drop-shadow(5px 5px 5px #222);
+   
 }
 
 hr {
@@ -1143,232 +1145,6 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
     font-weight:700
 }
 
-.nda_button{
-    min-height:60px;
-    border:0;
-    display:inline-flex;
-    align-items:center;
-    min-width:189px;
-    font-size:16px;
-    text-align:center;
-    background-color: #306998;
-    color:#fff;
-    justify-content:space-between;
-    position:relative;
-    top:0;
-    left:0;
-    padding:0 20px;
-    box-shadow:8px 8px 0 #ff44b0;  
-    text-decoration:none;
-    transition:0.15s linear 0s;
-    margin-bottom:8px;
-    margin-right:8px;
-    cursor:pointer;
-}
-.nda_button:before,.nda_button:after{
-    position:absolute;
-    content:'';
-    transition:0.15s linear 0s;
-    background-color:#ff44b0;  
-    transform:rotate(45deg);
-    width:11px;
-    height:15px
-}
-.nda_button:before{
-    bottom:-6px;
-    left:4px
-}
-.nda_button:after{
-    top:2px;
-    right:-4px
-}
-.nda_button:hover{
-    top:4px;
-    left:4px;
-    box-shadow:4px 4px 0 #ff44b0;  
-    outline:none
-}
-.nda_button:hover:before,.nda_button:hover:after{
-    width:6px;
-    height:6px
-}
-.nda_button:hover:before{
-    bottom:-3px;
-    left:1px
-}
-.nda_button:hover:after{
-    top:1px;
-    right:-3px
-}
-.nda_button:hover .nda_button__text{
-    -webkit-text-decoration:underline 1px #d97abf;
-    text-decoration:underline 1px #d97abf
-}
-.nda_button:active{
-    top:8px;
-    left:8px;
-    box-shadow:none;
-    outline:none
-}
-.nda_button:active .nda_button__text{
-    -webkit-text-decoration:underline 1px rgba(217,122,191,0);
-    text-decoration:underline 1px rgba(217,122,191,0)
-}
-.nda_button:active:before{
-    bottom:2px;
-    left:4px
-}
-.nda_button:active:after{
-    top:2px;
-    right:4px
-}
-
-.nda_button__inner{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    height:100%;
-    min-height:60px;
-    z-index:1;
-    margin:0 -20px;
-    padding:0 20px;
-    background-color: #306998;
-    min-width:inherit
-}
-
-.nda_button--secondary .nda_button__inner{
-    background-color:#fff
-}
-.nda_button--secondary .nda_button__arrow-icon{
-    border-color:#E8EAED
-}
-.nda_button--special{
-    background:#0053B8;
-    box-shadow:none;
-    margin-right:0;
-    z-index:1
-}
-.nda_button--special .nda_button__arrow-icon{
-    color:#fff;
-    border-color:rgba(255,255,255,0.3);
-    font-size:20px
-}
-.nda_button--special:before,.nda_button--special:after{
-    display:none
-}
-.nda_button--special:hover{
-    box-shadow:none;
-    top:0;
-    left:0
-}
-.nda_button--special:hover .nda_button__text{
-    -webkit-text-decoration:underline 1px #fff;
-    text-decoration:underline 1px #fff
-}
-.nda_button--special.focus-visible,.nda_button--special:focus{
-    background:#003678
-}
-.nda_button--special:focus-visible,.nda_button--special:focus{
-    background:#003678
-}
-.nda_button--disabled{
-    background:#D5D7DB;
-    color:#000;
-    cursor:default;
-    pointer-events:none
-}
-.nda_button--disabled:hover{
-    background:#D5D7DB;
-    color:#fff
-}
-.nda_button--disabled .nda_button__inner{
-    background-color:#D5D7DB
-}
-.nda_button__text{
-    padding-right:20px;
-    -webkit-text-decoration:underline 1px rgba(217,122,191,0);
-    text-decoration:underline 1px rgba(217,122,191,0);
-    transition:-webkit-text-decoration-color 300ms;
-    transition:text-decoration-color 300ms;
-    transition:text-decoration-color 300ms, -webkit-text-decoration-color 300ms
-}
-.nda_button__arrow-icon{
-    border-left:1px solid rgba(255,255,255,0.25);
-    height:100%;
-    min-height:60px;
-    padding-left:18px;
-    font-size:24px;
-    color:#D97ABF
-}
-.nda_button--dark{
-    color:#fff
-}
-.nda_button--dark .nda_button__inner{
-    background:#000
-}
-.nda_button--dark .nda_button__arrow-icon{
-    border-color:rgba(255,255,255,0.25)
-}
-.nda_button--square{
-    min-width:60px;
-    width:60px;
-    min-height:60px
-}
-.nda_button--square .nda_button__inner{
-    min-width:inherit;
-    justify-content:center
-}
-.nda_button--transparent{
-    box-shadow:none;
-    background-color:#fff;
-    color:#000
-}
-.nda_button--transparent:hover{
-    box-shadow:none
-}
-.nda_button--transparent:hover .nda_button__inner:before{
-    bottom:-4px;
-    right:-4px;
-    top:4px;
-    left:4px
-}
-.nda_button--transparent:before,.nda_button--transparent:after{
-    background-color:rgba(255,255,255,0)
-}
-.nda_button--transparent:before{
-    border-bottom:1px solid #D5D7DB
-}
-.nda_button--transparent:after{
-    border-top:1px solid #D5D7DB
-}
-.nda_button--transparent .nda_button__icon{
-    color:#ff44b0;  
-    font-size:20px
-}
-.nda_button--transparent .nda_button__inner{
-    border:1px solid #D5D7DB;
-    background:#fff
-}
-.nda_button--transparent .nda_button__inner:before{
-    content:'';
-    top:8px;
-    bottom:-8px;
-    left:8px;
-    right:-8px;
-    display:block;
-    position:absolute;
-    border-right:1px solid #D5D7DB;
-    border-bottom:1px solid #D5D7DB;
-    z-index:-1;
-    transition:right 0.22s ease-out,bottom 0.22s ease-out,left 0.22s ease-out,top 0.22s ease-out
-}
-.nda_button--transparent:active .nda_button__inner:before{
-    top:0;
-    bottom:0;
-    left:0;
-    right:0
-}
- 
 
   </style>
 </head>
@@ -1430,9 +1206,9 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
         </section>
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
            <h2>Boing</h2>
-           <p>
+
               <img class="screenshot enabled" src="1.png" alt="screenshot of Boing">
-           </p>
+
            <p>In the game
               <i>Pong</i> from 1972, players hit a ball back and forth. Our
               <i>Boing</i> game, adapted from one in
@@ -1441,9 +1217,9 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
         </section>
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
            <h2>Q*bert</h2>
-           <p>
+   
               <img class="screenshot enabled" src="2.png" alt="screenshot of Q*bert">
-           </p>
+
            <p>Jump around a pyramid of blocks, trying to change the whole stack yellow without falling off! Our version is adapted from one in
               <a href="https://wireframe.raspberrypi.org/issues/42">Wireframe magazine</a>, inspired by the 1982 arcade classic.
            </p>
@@ -1567,13 +1343,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
   </footer>
   </div>
 
-  <div style="position:relative; margin:auto; padding-top:5px; ">
-    <div class="nda_button" style="width:200px">
-       <span class="nda_button__inner">
-       &nbsp;&nbsp;<span class="nda_button__text" style="font-size:18px;"> Start your coding journey</span>
-       </span>
-    </div>
- </div>
+
   
   <script>
      function toggleNav() {
