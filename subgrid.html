@@ -6,10 +6,14 @@
   <title>Pytch new landing page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400&display=swap" rel="stylesheet">   <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
 
 .sitemap {
     display: flex; /* Use flexbox to arrange lists side by side */
+    margin:auto;
   }
   
   .sitemap ul {
@@ -22,11 +26,17 @@
     margin: 10px; /* Adjust spacing between list items */
   }
 
+  .list-container{
+    flex-grow: 1;
+  }
+  
 
 
 
 
-
+*{
+  font-family: 'Hanken Grotesk', sans-serif !important;
+}
 
 
 
@@ -41,19 +51,24 @@
 /* Px Grotesk */
 
 .rounded-button {
-    border-radius: 14px; /* Adjust the value to control the roundness of the corners */
-    padding: 10px 20px; /* Adjust padding as needed */
-    color: white; /* Set text color */
-    border: none; /* Remove default button border */
-    cursor: pointer; /* Add cursor pointer on hover */
-    font-size: 16px; /* Set font size */
+    border-radius: 14px;
+    padding: 10px 20px; 
+    color: white; 
+    cursor: pointer; 
+    font-size: 16px; 
     margin: auto;
     background-color: #306998;
     border: 2px solid #fff792;
     width:200px; 
     height:70px;        
-    margin-top: -35px; /* Adjust this value to control the overlap */
-    margin-left: calc(15% - 100px); /* Adjust this value to center horizontally */
+    margin-top: -35px; /* overlap */
+    margin-left: calc(15% - 100px); /* value to center horizontally */
+    background-image: url('MicrosoftTeams-image.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    text-shadow: 2px 2px 2px black;
+    
 }
 .rounded-button:hover{filter: brightness(80%);}
 body{ background-color: #f8f8f8 !important;}
@@ -1207,7 +1222,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
         </button>
      </section>
   </header>
-  <button id="myBtn1"  class="rounded-button" >Start your  coding journey</button>
+  <button id="myBtn1"  class="rounded-button">Start your  coding journey</span></button>
   
   <main>
      <div style="display:none;" class="demo-cards">
@@ -1323,53 +1338,44 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
 
 
         
-<div class="sitemap">
-  <div class="list-container">
-    <h2>List 1</h2>
+<div class="sitemap" >
+  <div class="list-container" >
+    <h2>Contact us</h2>
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>Email</li>
+      <li>Twitter</li>
     </ul>
   </div>
   
-  <div class="list-container">
-    <h2>List 2</h2>
+  <div class="list-container" >
+    <h2>About</h2>
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>Our team</li>
+      <li>Our research</li>
     </ul>
   </div>
   
-  <div class="list-container">
-    <h2>List 3</h2>
+  <div class="list-container" >
+    <h2>For teachers</h2>
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>Tutorials</li>
+      <li>Demos</li>
+      <li>Materials</li>
+      <li>Help</li>
     </ul>
   </div>
   
-  <div class="list-container">
-    <h2>List 4</h2>
+  <div class="list-container" >
+    <h2>Resources</h2>
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
+      <li>FAQ</li>
+      <li>Info for developers</li>
+      <li>Help</li>
     </ul>
   </div>
 </div>
 
-        <div class="section-buttons">
-           <button class="left-button">Left Button</button>
-           <div class="right-buttons">
-              <button class="button">Tutorials</button>
-              <button class="button">Project</button>
-              <button class="button">Help</button>
-              <a href="#" class="arrowbutton next">team</a>
-           </div>
-        </div>
+
         <div class="section-images">
            <img src="Picture1.png" alt="Image 1">
         </div>
