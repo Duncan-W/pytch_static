@@ -6,8 +6,6 @@
   <title>Pytch new landing page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
 
@@ -86,6 +84,39 @@ li, a {color:#fff792 !important; }
   text-align: center;
   padding:5px;
 }
+
+@media screen and (max-width: 1068px){
+  .version-tag{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 668px){
+  .version-tag{
+    display: inline;
+  }
+  .hamburger-menu {
+    margin-left: 10vw;
+    margin-right: auto !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .square {
+    font-size: medium; /* Adjust font size for smaller screens */
+    height: auto; /* Allow the height to adjust based on content */
+    margin: 10px 0; /* Adjust margins to create space between squares */
+    border: 1px solid white;
+  }
+  .modal-content {
+  width: 90% !important;
+  overflow: hidden !important;
+  }
+  .rounded-button{
+    margin-left: 10vw;
+  }
+}
+
 
 .square:hover{
   filter: brightness(1.15);
@@ -1270,7 +1301,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
   <section class="easy">
 
      <div class="section-heading">
-      <img src="your-logo.png" alt="Logo" class="section-logo">
+      <img src="your-logo.png" alt="Logo" class="section-logo"><span class="icon-burger"></span>
       <h2 style="font-size: 2rem;">An easy approach</h2>
     </div>
   
@@ -1392,7 +1423,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
      <div id="myModal1" class="modal">
         <!-- Modal content -->
         <h1> I want to ... </h1>
-        <div class="modal-content" style="width:60%">
+        <div class="modal-content">
           
            <span aria-label="Close" class="close">&times;</span>
            <div style="display:flex">
@@ -1524,8 +1555,10 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
                      // Adjust the index based on the arrow key
                      if (key === 'ArrowRight') {
                          i = (i + 1) % cards.length; // Increment for right arrow
+                         console.log(` ${i} `);
                      } else if (key === 'ArrowLeft') {
                          i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
+                         console.log(` ${i} `);
                      }
                  }
 
