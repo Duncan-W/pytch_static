@@ -125,21 +125,22 @@ li, a {color:#fff792 !important; }
 }
 
 body {margin:0px; padding:0px;}
-button {    background-color: transparent;
-    border: none;
-    padding: 0;
-   }
+button {    
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
 
 
 #play_button {
-      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); /* Add shadow by default */
-      transition: filter 0.3s ease-in-out; /* Transition for smooth effect */
-      cursor:pointer;
-    }
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); /* Add shadow by default */
+  transition: filter 0.3s ease-in-out; /* Transition for smooth effect */
+  cursor:pointer;
+}
 
-    #play_button:hover {
-      filter: drop-shadow(0 0 10px rgba(255, 2, 2)); /* Increase shadow on hover */
-    }
+#play_button:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 2, 2)); /* Increase shadow on hover */
+}
 
 
 /* 252, 245, 140 for yellow */
@@ -160,9 +161,6 @@ button {    background-color: transparent;
   max-width: 90%;
 }
 
-.TutorialMiniCard a{
-color: #ff44b0;
-}
 
 .TutorialMiniCard p{
   margin-top: 30px;
@@ -173,11 +171,7 @@ color: #ff44b0;
 .outer-container {
       display: flex;
       align-items: center;
-      padding-left: 10vw;
-      
-      
-      
-     
+      padding-left: 10vw; 
     }
 
 
@@ -186,8 +180,6 @@ color: #ff44b0;
   justify-content: space-between;
   overflow-x: hidden;
   color:white;
-
-  
   width: 70vw;
   gap: 10px;
 }
@@ -218,11 +210,6 @@ color: #ff44b0;
    
 }
 
-hr {
-
-  display:none;
-
-}
 
 
 .left-arrow, .right-arrow {
@@ -395,11 +382,6 @@ nav ul li a{
 
 
 
-
-.version-tag{
-    color: #aaa;
-    text-decoration: none;
-}
 
 
 
@@ -1350,9 +1332,9 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
         </section>
         <section role="alert" class="fade TutorialMiniCard alert alert-success show">
            <h2>Splat the moles</h2>
-           <p>
+
               <img class="screenshot enabled" src="3.png" alt="screenshot of Splat-The-Moles">
-           </p>
+
            <p>A game where the player has to splat moles to score points. But if they miss, they lose all their points!
            </p>
         </section>
@@ -1379,9 +1361,9 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
         <div class="cbody">
           <div class="cmain">
              <div class="ccontentwrap">
-                <div class="ccontent">
+                <div class="ccontent"  >
                    <button aria-label="Video overview of Pytch">
-                   <img  class="ccont" src="invaders.png" alt="" title="Click here for an overview of Pytch!" />
+                   <img  class="ccont" src="invaders.png" alt="" style="min-width: 90%;" title="Click here for an overview of Pytch!" />
                    </button>
                 </div>
              </div>
@@ -1472,7 +1454,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
      <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-           <span aria-label="Close" class="close">&times;</span>
+           <button aria-label="Close" class="close">&times;</button>
            <video class="ccont" controls data-toggle="lightbox">
               <source src="Overview.mp4" type="video/mp4" />
            </video>
@@ -1483,7 +1465,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
         <h1 id="myModal1_header"> I want to ... </h1>
         <div class="modal-content">
           
-           <span aria-label="Close" class="close">&times;</span>
+           <button aria-label="Close" class="close">&times;</button>
            <div style="display:flex">
               <div class="square">
                  <p>Start learning from basics with guided help and tutorials</p>
@@ -1679,6 +1661,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
          button.addEventListener('click', function () {
              // Run the provided code when the close button is clicked
              modal.style.display = "none";
+             modal1.style.display = "none";
          });
      });
      
