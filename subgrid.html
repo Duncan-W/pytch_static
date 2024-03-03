@@ -148,6 +148,8 @@ button {    background-color: transparent;
 /* Carousel  */
 /* ********** */
 
+
+
 .TutorialMiniCard img{
   transition: transform 0.07s; /* smooth transition */
   width: 200px;
@@ -155,7 +157,7 @@ button {    background-color: transparent;
   display: block; /* Remove extra spacing below image */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   filter: drop-shadow(5px 5px 5px #222);
-  max-width: 90vw;
+  max-width: 90%;
 }
 
 .TutorialMiniCard a{
@@ -164,6 +166,7 @@ color: #ff44b0;
 
 .TutorialMiniCard p{
   margin-top: 30px;
+  max-width: 100%;
 }
  
 
@@ -239,6 +242,10 @@ hr {
   width: 90%;
 }
 
+.modal-content .ccont{
+  border-radius:5px;
+}
+
 
 /* ********** */
 /* Modal for video */
@@ -268,9 +275,6 @@ hr {
 
 /* Modal Content */
 .modal-content {
-  border-radius: 10px 10px 10px 10px;
--webkit-border-radius: 10px 10px 10px 10px;
--moz-border-radius: 10px 10px 10px 10px;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
@@ -438,6 +442,11 @@ nav ul li a{
      padding-bottom: 10vh;
 }
 
+.contact {
+  grid-area: contact;
+  max-width: 100vw;
+}
+
 
 header section{
   max-width: 100vw;
@@ -457,6 +466,8 @@ header section{
 }
   header section p{ padding: 10px;}
 }
+
+
  nav {
      grid-area: nav;
      background-color: #228;
@@ -484,11 +495,13 @@ header section{
      padding: 10px;
      background-color: #333;
      color: white;
+     max-width: 100vw;
 }
 
 
 .easy {
   grid-area: easyish;
+  max-width: 100vw;
      text-align: center;
      padding: 10px;
      background-color: #00b5b0;
@@ -496,7 +509,6 @@ header section{
      border-top: 1.5px solid #306998;
      border-bottom: 1.5px solid #306998;
      margin-bottom: 20px;
-  
 }
 
 
@@ -506,6 +518,7 @@ header section{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    
   }
 
   .section-content img{
@@ -523,6 +536,12 @@ header section{
     .easy .section-content {
       flex-direction: column; /* Stack items vertically on smaller screens */
     }
+    .section-content  * {
+    flex: 1 1 100%; /* Each child takes up full width */
+    max-width: 100%;
+
+  }
+    
   }
 
 
@@ -675,10 +694,17 @@ header section{
 }
 
 .section-buttons {
+  margin: auto; 
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.section-buttons p { 
+  max-width: 80%;
+  padding-right: 5%;
+
 }
 
 .left-button {
@@ -783,9 +809,19 @@ header section{
   border-left-color: #0585e8;
 }
 
+.mail{
+  text-decoration: none;
+}
+
+.contact .mail{
+  color: black !important;
+  font-size: 5rem;
+}
+
 
 .mail:hover{
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
 }
 
 
@@ -805,6 +841,8 @@ header section{
       margin-top: 0%;
       
     }
+
+
 
 
 
@@ -1343,7 +1381,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
              <div class="ccontentwrap">
                 <div class="ccontent">
                    <button aria-label="Video overview of Pytch">
-                   <img class="ccont" src="invaders.png" alt="" title="Click here for an overview of Pytch!" />
+                   <img  class="ccont" src="invaders.png" alt="" title="Click here for an overview of Pytch!" />
                    </button>
                 </div>
              </div>
@@ -1374,9 +1412,9 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
 
   
   <div class="section-buttons contact">
-    <span style="padding-left: 5rem;font-size: 5rem;"><a class="mail" style="color:black !important; text-decoration: none; " href="mailto:info@pytch.org">&#9993;</a></span>
+    <span style="padding-left: 5%;"><a class="mail" href="mailto:info@pytch.org">&#9993;</a></span>
     <!-- UTF-8 character for an envelope -->
-    <p class="large-text" style="margin:auto">Please email us at info@pytch.org with any feedback or suggestions</p>
+    <p class="large-text">Please email us at info@pytch.org with any feedback or suggestions</p>
  </div>
 
   
