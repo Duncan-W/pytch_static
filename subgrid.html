@@ -495,34 +495,23 @@ header section{
 
 
 
-  .easy .section-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
-  }
 
   .section-content img{
     margin: 10px;
   }
 
-  .easy .section-buttons,
-  .easy .cbody {
-    flex: 1;
-    margin: 20px; /* Add some spacing between the two items */
-  }
 
     /* Media query for mobile */
     @media (max-width: 768px) {
-    .easy .section-content {
+    .easy {
       flex-direction: column; /* Stack items vertically on smaller screens */
     }
-    .section-content  * {
-    flex: 1 1 100%; /* Each child takes up full width */
-    max-width: 100%;
 
-  }
+  
+
+
+ 
+
     
   }
 
@@ -1357,14 +1346,14 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
       <div class="section-buttons">
         <p>Here you can see what the Pytch environment looks like - providing a single screen where students can code, run their programs, and choose resources from our media library.</p>
       </div>
-      <div style="margin: 20px;">
+
         <div class="cbody">
           <div class="cmain">
              <div class="ccontentwrap">
                 <div class="ccontent"  >
-                   <button aria-label="Video overview of Pytch">
-                   <img  class="ccont" src="invaders.png" alt="" style="min-width: 90%;" title="Click here for an overview of Pytch!" />
-                   </button>
+
+                   <img  class="ccont" src="invaders.png" alt=""  />
+
                 </div>
              </div>
           </div>
@@ -1373,7 +1362,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
           <div class="cleg">
           </div>
         </div>
-      </div>
+
     </div>
   
     <h2 style="font-size: 2rem;">Two ways of writing code</h2>
