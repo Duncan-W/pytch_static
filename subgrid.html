@@ -29,7 +29,9 @@
   }
   
 
-
+section h2 {
+  font-size: 2rem;
+}
 
 
 *{
@@ -494,6 +496,11 @@ header section{
 }
 
 
+.easy .section-content {
+    display: flex;
+  max-width: 100%;
+  }
+
 
 
   .section-content img{
@@ -503,9 +510,14 @@ header section{
 
     /* Media query for mobile */
     @media (max-width: 768px) {
-    .easy {
+    .easy, .section-content, .sitemap {
       flex-direction: column; /* Stack items vertically on smaller screens */
     }
+
+    .section-content img{
+    margin: 0px;
+    max-width: 80%;
+  }
 
   
 
@@ -526,12 +538,13 @@ header section{
 
 .cbody
 {
-  margin: auto;
-  position: relative;
   display: inline-block;
   height: 150px;
   width: 500px;
   text-align: center;
+  max-width: 100vw;
+  margin-right: 15%;
+  margin-bottom: 20%;
 }
 .cmain
 {
@@ -543,7 +556,6 @@ header section{
 }
 .ctop
 {
-  display: inline-block;
   width: 50%;
 }
 
@@ -556,7 +568,6 @@ header section{
   height: 250px;
   background-color: rgba(76, 76, 76, 0.42);
   text-align: center;
-  
 }
 
 .ccontent
@@ -1339,7 +1350,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
 
      <div class="section-heading">
       <img src="your-logo.png" alt="Logo" class="section-logo"><span class="icon-burger"></span>
-      <h2 style="font-size: 2rem;">Pytch<span role="presentation">_</span> in action</h2>
+      <h2 >Pytch<span role="presentation">_</span> in action</h2>
     </div>
   
     <div class="section-content">
@@ -1365,7 +1376,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
 
     </div>
   
-    <h2 style="font-size: 2rem;">Two ways of writing code</h2>
+    <h2 >Two ways of writing code</h2>
   
     <div class="section-content">
       <div>
@@ -1393,13 +1404,13 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
      <div class="section-content">
         <div class="section-heading">
            <img src="your-logo.png" alt="Logo" class="section-logo">
-           <h2 style=" font-size: 2rem;">SiteMap<span role="presentation">_</span></h2>
+           <h2 style=" font-size: 2rem;">SiteMap</h2>
         </div>
 
 
         <div class="sitemap">
           <div class="list-container">
-            <h2>Contact us</h2>
+            <h2>Contact us<span role="presentation">_</span></h2>
             <ul>
               <li><a href="#">Email</a></li>
               <li><a href="https://twitter.com/pytchlang/">Twitter</a></li>
@@ -1407,7 +1418,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
           </div>
           
           <div class="list-container">
-            <h2>About</h2>
+            <h2>About<span role="presentation">_</span></h2>
             <ul>
               <li><a href="https://pytch.scss.tcd.ie/who-we-are/">Our team</a></li>
               <li><a href="https://pytch.scss.tcd.ie/research/">Our research</a></li>
@@ -1415,7 +1426,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
           </div>
           
           <div class="list-container">
-            <h2>For teachers</h2>
+            <h2>For teachers<span role="presentation">_</span></h2>
             <ul>
               <li><a href="https://www.pytch.org/app/tutorials/">Tutorials</a></li>
               <li><a href="#">Demos</a></li>
@@ -1425,7 +1436,7 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
           </div>
           
           <div class="list-container">
-            <h2>Resources</h2>
+            <h2>Resources<span role="presentation">_</span></h2>
             <ul>
               <li><a href="#">FAQ</a></li>
               <li><a href="https://www.pytch.org/doc/developer.html">Info for developers</a></li>
@@ -1574,12 +1585,13 @@ i[class^="icon-"]:before,i[class*=" icon-"]:before{
 
                  // Create a document fragment
                  const fragment = document.createDocumentFragment();
+                 console.log("____________________________________");
 
                  for (let i = window_position, steps = window_size; steps > 0; steps--) {
 
                      // Append the child element to the fragment
                      fragment.appendChild(cards[i].node);
-                     //console.log(cards[i]);
+                     console.log(cards[i]);
 
                      // Adjust the index based on the arrow key
                      if (key === 'ArrowRight') {
