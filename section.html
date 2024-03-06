@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title> ds gs </title>
+<style>
+
+.easy {
+  grid-area: easyish;
+
+     text-align: center;
+
+     background-color: #00b5b0;
+     color: white;
+     border-top: 1.5px solid #306998;
+     border-bottom: 1.5px solid #306998;
+
+}
+
+
+.easy .section-content {
+    display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  }
+
+
+
+
+
+
+
+    /* Media query for mobile */
+    @media (max-width: 968px) {
+    .easy, .section-content, .sitemap {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+
+}
+
+</style>
+
+
+<section class="easy">
+
+    <div class="section-heading">
+     <img src="your-logo.png" alt="Logo" class="section-logo"><span class="icon-burger"></span>
+     <h2 >Pytch<span role="presentation">_</span> in action</h2>
+   </div>
+ 
+   <div class="section-content">
+     <div class="section-buttons">
+       <p>Here you can see what the Pytch environment looks like - providing a single screen where students can code, run their programs, and choose resources from our media library.</p>
+     </div>
+
+
+   </div>
+ 
+   <h2 >Two ways of writing code</h2>
+ 
+   <div class="section-content">
+     <div>
+       <img src="sbs.png">
+       <p>Script by script</p>
+     </div>
+     <div>
+       <img src="bp.png">
+       <p>One big program</p>
+     </div>
+   </div>
+   
+ </section>
+ </html>
