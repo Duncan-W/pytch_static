@@ -102,9 +102,9 @@ li, a {color:#fff792 !important; }
     height:600px !important;
   }
   .square {
-    font-size: medium; /* Adjust font size for smaller screens */
-    height: auto; /* Allow the height to adjust based on content */
-    margin: 10px 0; /* Adjust margins to create space between squares */
+    font-size: medium; 
+    height: auto; /* Allow height based on content */
+    margin: 10px 0; /* margins between squares */
     border: 1px solid white;
   }
   .modal-content {
@@ -505,7 +505,11 @@ header section{
   max-width: 80vw;
   max-height: 80vw;
 }
-
+.section-content .pytch_images{
+  border: calc(8px + 0.2vw) solid transparent; 
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5); 
+  border-radius: 10%;
+}
 
 
 
@@ -679,6 +683,9 @@ header section{
   width: 80vw; 
   margin:auto;
 }
+
+
+/* A lot of the following no longer used */
 
 
 .button0 {
@@ -912,23 +919,7 @@ a{
     font-family:"icons";
     src:url("../fonts/icons/icons.eot?2eea613914c1e47b17dc92d510b7b4bd?#iefix") format("embedded-opentype"),url("../fonts/icons/icons.woff2?2eea613914c1e47b17dc92d510b7b4bd") format("woff2"),url("../fonts/icons/icons.woff?2eea613914c1e47b17dc92d510b7b4bd") format("woff"),url("../fonts/icons/icons.ttf?2eea613914c1e47b17dc92d510b7b4bd") format("truetype"),url("../fonts/icons/icons.svg?2eea613914c1e47b17dc92d510b7b4bd#icons") format("svg")
 }
-i[class^="icon-"],i[class*=" icon-"]{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center
-}
-i[class^="icon-"]:before,i[class*=" icon-"]:before{
-    font-family:icons;
-    font-style:normal;
-    font-weight:normal;
-    font-feature-settings:normal;
-    font-variant:normal;
-    text-transform:none;
-    line-height:1;
-    text-rendering:optimizeLegibility;
-    -webkit-font-smoothing:subpixel-antialiased;
-    -moz-osx-font-smoothing:grayscale
-}
+
 
 .icon-youtube:before{
     content:"\f144"
@@ -1011,8 +1002,7 @@ margin-right: 20% ;
         <li><a href="https://pytch.scss.tcd.ie/">About... </a></li>
         <li><a href="/doc/index.html">Help/Info?</a></li>
         <li><a href="/app/tutorials/">Tutorials</a></li>
-        <li>Demos</li>
-        <li>For teachers</li>
+        <li ><a href="https://pytch.scss.tcd.ie/lesson-plans/">Lesson plans</a></li>
         <li><a href="/app/my-projects/">My projects</a></li>
         <li class="mail">&#9993;</li>
      </ul>
@@ -1089,7 +1079,7 @@ margin-right: 20% ;
   <section class="easy">
 
      <div class="section-heading">
-      <img src="your-logo.png" alt="Logo" class="section-logo"><span class="icon-burger"></span>
+      <img src="Icon-02.png" alt="Logo" class="section-logo">
       <h2 >Pytch<span role="presentation">_</span> in action</h2>
     </div>
   
@@ -1120,11 +1110,11 @@ margin-right: 20% ;
   
     <div class="section-content">
       <div>
-        <img src="sbs.png">
+        <img class="pytch_images" src="pytch_jr.png" width="512" height="360">
         <p>Script by script</p>
       </div>
       <div>
-        <img src="bp.png">
+        <img class="pytch_images" src="pytch.png" width="512" height="360">
         <p>One big program</p>
       </div>
     </div>
@@ -1136,7 +1126,7 @@ margin-right: 20% ;
   <div class="section-buttons contact">
     <span style="padding-left: 5%;"><a class="mail" href="mailto:info@pytch.org">&#9993;</a></span>
     <!-- UTF-8 character for an envelope -->
-    <p class="large-text">Please email us at info@pytch.org with any feedback or suggestions</p>
+    <p class="large-text">Please email us at <a style="color:black !important" href="mailto:info@pytch.org">info@pytch.org</a> with any feedback or suggestions</p>
  </div>
 
   
@@ -1166,20 +1156,18 @@ margin-right: 20% ;
             <h2>For teachers<span role="presentation">_</span></h2>
             <ul>
               <li><a href="https://www.pytch.org/app/tutorials/">Tutorials</a></li>
-              <li><a href="#">Demos</a></li>
-              <li><a href="https://pytch.scss.tcd.ie/lesson-plans/">Materials</a></li>
-              <li><a href="#">Help</a></li>
+              <li><a href="https://pytch.scss.tcd.ie/lesson-plans/">Lesson plans</a></li>
             </ul>
           </div>
-          
+          <!--
           <div class="list-container">
             <h2>Resources<span role="presentation">_</span></h2>
             <ul>
-              <li><a href="#">FAQ</a></li>
               <li><a href="https://www.pytch.org/doc/developer.html">Info for developers</a></li>
               <li><a href="https://www.pytch.org/doc/webapp/user/index.html">Help</a></li>
             </ul>
           </div>
+          -->
         </div>
         
 
@@ -1204,15 +1192,17 @@ margin-right: 20% ;
           
            <button aria-label="Close" class="close">&times;</button>
            <div style="display:flex">
-              <div class="square">
-                 <p>Start learning from basics with guided help and tutorials</p>
-              </div>
-              <div class="square">
+              <button class="square">
+                <p>Start learning from basics with guided help and tutorials</p></a>
+              </button>
+              <button class="square">
                  <p>Start with a blank environment and work on my own</p>
-              </div>
+              </button>
+              <!--
               <div class="square">
                  <p>View sample projects and learn from them</p>
               </div>
+              -->
            </div>
         </div>
   </footer>
@@ -1225,7 +1215,6 @@ margin-right: 20% ;
          const navUl = document.querySelector('nav ul');
          navUl.classList.toggle('show');
      }
-     
      
 
      
@@ -1313,6 +1302,12 @@ margin-right: 20% ;
          }
 
          function handleArrowKeyPress(key) {
+             // Update the window_position based on the arrow key
+             if (key === 'ArrowRight') {
+               window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
+              } else if (key === 'ArrowLeft') {
+                window_position = (window_position + 1) % cards.length; // Increment for right arrow
+             }
              //console.log(`Arrow key pressed: ${key}`);
              const tutorialCarousel = document.getElementById('TutorialCarousel');
 
@@ -1324,16 +1319,10 @@ margin-right: 20% ;
                  const fragment = document.createDocumentFragment();
                  console.log("____________________________________");
 
-                 for (let i = window_position, steps = window_size; steps > 0; steps--) {
 
-                     // Adjust the index based on the arrow key
-                     if (key === 'ArrowRight') {
-                         i = (i + 1) % cards.length; // Increment for right arrow
+                 for (let i = window_position, steps = window_size; steps > 0; steps--) {
+                         i = (i + 1) % cards.length; // Increment for any arrow
                          console.log(` ${i} `);
-                     } else if (key === 'ArrowLeft') {
-                         i = (i - 1 + cards.length) % cards.length; // Decrement for left arrow
-                         console.log(` ${i} `);
-                     }
 
                      // Append the child element to the fragment
                      fragment.appendChild(cards[i].node);
@@ -1342,25 +1331,17 @@ margin-right: 20% ;
 
                  // Append the fragment to "TutorialCarousel" in a single operation
                  tutorialCarousel.appendChild(fragment);
+
              } else {
                  console.error('TutorialCarousel not found.');
              }
 
-             // Update the window_position based on the arrow key
-             if (key === 'ArrowRight') {
-                 window_position = (window_position + 1) % cards.length; // Increment for right arrow
-             } else if (key === 'ArrowLeft') {
-                 window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
-             }
+
          }
      }
      
 
-     
-     
 
-  </script>
-  <script>
      // Get references to both modals and buttons. If we have more than 2 this should be changed.
      let modal = document.getElementById("myModal");
      let modal1 = document.getElementById("myModal1");
@@ -1406,8 +1387,6 @@ margin-right: 20% ;
      // Close modals when clicking outside
      document.addEventListener("click", function (event) {
          if (event.target === modal) {
-             closeModal(modal);
-             console.log("eyyup");
              console.log(event);
          } else if (event.target === modal1) {
              closeModal(modal1);
